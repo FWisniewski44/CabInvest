@@ -35,12 +35,12 @@ library(kableExtra)
 library(gtools)
 library(gmodels)
 library(summarytools)
+library(data.table)
+library(ggpubr)
 
 ##################################################### import dfs
 
 erdda <- read_dta(file = "/Users/flo/Desktop/data/erdda/erdda_b-version-stata12.dta")
-
-gie <- read_dta(file = "/Users/flo/Desktop/data/gie/Data set (04 Dec 2020) with party codes V14.dta")
 
 
 

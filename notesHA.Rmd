@@ -1,0 +1,216 @@
+---
+title: "Notes: Investiture Rules - 6 Subcategories"
+author: "Florian Wisniewski"
+date: "`r Sys.Date()`"
+output:
+  github_document:
+    toc: TRUE
+    number_sections: TRUE
+---
+
+```{r setup + libraries + df, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# What will we do?
+
++ Create variables for the following 6 subcategories of an investiture vote, based on the data in erdda and literature (Rasch, Martin, Cheibub: *Unpacking Investiture Rules*)
+
++ Check relationship between those subcategories for all types of governments in erdda: is there a relationship between investiture procedures and cabinet bargaining duration?
+
+# Special remarks in some cases?
+
+## BELGIUM
+
++ change in constitution 1993
+
+## GREAT BRITAIN
+
++ Queen's Speech as mechanism is not particularly a parliamentary investiture vote - but Kelso considers it to be at least some form of investiture in the British case study
+
+## GERMANY
+
++ ballots in chancellor's investiture are cast in secrecy - it is a "Gewissensentscheidung"
+
+## IRELAND
+
++ in case the Taoiseach is not approved, there is no real rule as to what has to be done
+
+# Category I: Timing
+
+## BELGIUM
+
++ *ex post*: conducted **AFTER** monarch formally appointed coalition; gov. is already in charge
+
+## GREAT BRITAIN
+
++ *ex post*: conducted **AFTER** monarch formally appointed prime minister to form a government; gov. is already in charge
+
+## GERMANY
+
++ *ex ante*: government (i. e., the chancellor) has to pass the IV in order to come into being
+
+## HUNGARY
+
++ *ex ante*: the PM has to be elected first, before this he has no power
+
+## IRELAND
+
++ *ex ante*: Taoiseach has to be elected; second IV is cast on his cabinet; after this, both are in power
+
+## ITALY
+
++ *ex post*: IV is cast after appointment of gov. by President
+
+# Category II: Right to nominate
+
+## BELGIUM
+
++ Constitution says: "*King* appoints and dismisses cabinet ministers"
+
+## GREAT BRITAIN
+
++ The Queen appoints the prime minister; but: since 1974, all parties have a designated leader, so the role of this appointment is not that important
+
+## GERMANY
+
++ special here: de jure = President picks a candidate, Bundestag elects the candidate
+  + but de facto: the President always picked (and always will) the majority solution and convenes with the members of the Bundestag on whom he should choose
+  
+## HUNGARY
+
++ President has right to nominate the PM-to-be
+
+## IRELAND
+
++ Nomination of the Taoiseach is up to the Second Chamber, the Dáil
+
+## ITALY
+
++ President appoints government
+
+
+# Category III: Who votes
+
+## BELGIUM
+
++ 1919 until 1995: both chambers
++ from 1995 onwards: only one
+
+## GREAT BRITAIN
+
++ Queen's speech is delivered to both the House of Commons and the House of Lords
+  + Lords: only followed by a debate; no vote
+  + Commons: followed by a longer debate; designated opposition can make amendments - "stress test" for the coming government - at the end, there is a vote
+  
+## GERMANY
+
++ The Bundestag, so one chamber
+
+## HUNGARY
+
++ President appoints - Parliament elects; HUN only one chamber
+
+## IRELAND
+
++ Vote is cast by the Dáil
+
+## ITALY
+
++ Government has to acquire positive vote in both chambers
+
+
+# Category IV: Target of the vote
+
+## BELGIUM
+
++ whole cabinet
+
+## GREAT BRITAIN
+
++ combination: Queen's speech is a vague outline of gov. programme; but: if failure of vote, the PM is likely to be expected to resign, so it is somehow also a vote on his position
+
+## GERMANY
+
++ target is the chancellor-to-be, so head of government, coded as 1
+
+## HUNGARY
+
++ Head of state, PM, so coded as 1
+
+## IRELAND
+
++ Target of first IV is the Taoiseach; subsequently, he presents to the Dáil his cabinet ministers, which are voted for/against in a second IV
+
+## ITALY
+
++ whole government is voted upon as a package
+
+# Category V: Investiture failure
+
+## BELGIUM
+
++ somehow, nothing really happens; government stays in power - except for no conf vote **with** an alternative PM suggested
+  + therefore, I code it NA, because it is highly dependent on what the chamber is doing after the failure, and only if this is done correctly, there are new elections to be held)
+  
+## GREAT BRITAIN
+
++ in case of failure, PM would most likely be expected to resign
+  + new elections OR a newly appointed PM could be the next step - so this is again coded as NA
+  
+## GERMANY
+
++ if failed in first round (presidents pick, abs. maj.), second round is Bundestag pick, abs. maj.
++ if failed again, third/final round is plurality; minority chancellor-elect is to be picked by discretion by President (has never happened)
+
+## HUNGARY
+
++ new IV is cast
+
+## IRELAND
+
++ there is no real procedure for when the IV fails - could be new general elections, could also be that there is another round of casting IVs (as this is stated as "unclear" in the literature, I decided to code this as NA)
+
+## ITALY
+
++ no clear procedure: looking at Draghi cabinet being sworn in in Feb. '21 - possibilities for new elections, but also for negotiations with current government (therefor coded as NA)
+
+# Category VI: Decision rule
+
+## BELGIUM
+
++ Coded as negative majority
+  + until 1995: ex post consultation which is not obligatory
+  + from 1995: explicitly stated = negative majority needed
+
+## GREAT BRITAIN
+
++ Coded as simple majority, because thats the AYE-NAY-vote in the Commons
+
+## GERMANY
+
++ easy case, coded as absolute majority, as third stage of failure has never happened and most likely never will
+
+## HUNGARY
+
++ absolute majority (100 of the 199 MPs, if everyone attends)
+
+## IRELAND
+
++ for Taoiseach: more yes, than no votes (so, as it is some kind of majority, I coded this as 1)
+
++ apparently the same for second IV
+
+## ITALY
+
++ both chambers: simple majority
+
+
+
+
+
+
+
+
+
+

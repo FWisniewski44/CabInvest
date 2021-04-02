@@ -1,0 +1,113 @@
+---
+title: "HA Parlamentsforschung"
+author: "Florian Wisniewski"
+date: "4/2/2021"
+output:
+  word_document:
+    template_docx: "/Users/flo/Documents/Uni/template-Rmd.docx"
+    toc: TRUE
+    number_sections: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+########################################## loading libraries
+
+# libraries survival analysis
+library(survival)
+library(survminer)
+library(survMisc)
+library(simPH)
+library(flexsurv)
+library(My.stepwise)
+
+# libraries general
+library(tidymodels)
+library(tidyverse)
+library(rms)
+library(MASS)
+library(corrplot)
+library(lubridate)
+library(Amelia)
+library(xtable)
+library(haven)
+library(foreign)
+library(broom)
+library(psych)
+library(Hmisc)
+library(expss)
+library(rockchalk)
+library(effects)
+library(modeldata)
+library(randomForest)
+library(compare)
+library(psych)
+library(desc)
+library(PerformanceAnalytics)
+library(reshape2)
+library(d3heatmap)
+library(kableExtra)
+library(gtools)
+library(gmodels)
+library(summarytools)
+library(data.table)
+library(ggpubr)
+
+##########################################
+
+# load normal erdda
+erdda <- read_dta(file = "/Users/flo/Desktop/data/erdda/erdda_b-version-stata12.dta")
+
+# load own modified erdda
+
+
+```
+
+# Einleitung
+
++ Erkenntnisinteresse ist, ob es neben den Auswirkungen der Investiturregeln auf Minderheitsregierungen nach Cheibub et al. 2019 auch welche auf Regierungen allgemein gibt?
+
+# Hauptteil
+
+## Theoretischer Hintergrund
+
++ Aufbau meiner Überlegungen auf Cheibub/Martin/Rasch (2019) und den Oxford-Sammelband, herausgegeben von Rasch/Martin/Cheibub (2015), mit den jeweiligen Länderstudien
+
+## Daten: ERDDA, aber selbst modifiziert
+
+
+## Methodik
+
++ ereignisanalytisches Vorgehen über Cox PH-Modelle, da Modellierung des Einflusses über Zeit
+
++ dabei: semi-parametrische Modelle - Modellvoraussetzungen, dass die PH-Assumption von nicht proportional verteilten Einflüssen über Zeit getroffen ist
+
+## Analyse der Daten: Bargaining Duration vs. 6 Investitur-Dimensionen + Kontrollen
+
+
+# Ergebnisse der Analyse, Fazit, Schluss?
+
+
+# Literaturverzeichnis
+
++ Cheibub, José Antonio; Martin, Shane; Rasch, Bjørn Erik (2019): *Investiture rules and formation of minority governments in European parliamentary democracies*, Party Politics, 27:2 (2021), S. 351-362.
+
++ Rasch, Bjørn Erik; Martin, Shane; Cheibub, José Antonio (2015, Hrsg.): *Parliaments and Government Formation. Unpacking Investiture Rules*, Oxford University Press, Oxford. Abgerufen online unter: https://oxford.universitypressscholarship.com/view/10.1093/acprof:oso/9780198747017.001.0001/acprof-9780198747017-chapter-1 (Stand: 02.04.2021).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
