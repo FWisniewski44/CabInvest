@@ -42,8 +42,11 @@ library(ggpubr)
 
 erdda <- read_dta(file = "/Users/flo/Desktop/data/erdda/erdda_b-version-stata12.dta")
 
+investErdda <- read_xls(path = "")
 
+investErdda <- rename("abs_dur")
 
+coxph(data = investErdda, Surv(investErdda$) ~ )
 
 
 

@@ -36,6 +36,32 @@ knitr::opts_chunk$set(echo = FALSE)
 
 + in case the Taoiseach is not approved, there is no real rule as to what has to be done
 
+## SPAIN
+
++ change of decision rule after first IV round fails
+
+## POLAND
+
++ high degree of cooperation between the Sejm and the Polish President in IV procedure
+  + *Round 1*: President appoints cabinet; Sejm votes - if IV passed, President appoints within 14 days (abs. majority), if not = Round 2
+  + *Round 2* (if R1 failed): Sejm selects new cabinet and votes - if IV then passed, President appoints immediately (abs. majority), if not = Round 3
+  + *Round 3* (if R2 also failed): R2 fails, if Sejm failed to select new cabinet within 14 days; then, the President has the right to appoint another cabinet; if this fails the vote in the Sejm, too, new elections are called by the President
+  
+## PORTUGAL
+
++ negative investiture rules - it is up to the parliament to provide a negative majority to disapprove of a cabinet
+  + as the president appoints a "designated" cabinet, but this cabinet (because of the negative majority rules) does not have to gain support of parliament, Leston-Bandeira et al. state that Portugal can also be considered as an *ex post* IV
+
+## SWEDEN
+
++ negative IV rules: PM is invested if less than half of the MPs vote **against** him/her
+
++ constitutional reform in 1975: before = appointment of PM directly through the monarch, no IV procedure; after 1975, IV procedure, designated PM appointed by Speaker of the Riksdag
+
+## NETHERLANDS
+
++ it is not necessarily so, that a government dissolution has to lead to new general elections
+
 # Category I: Timing
 
 ## BELGIUM
@@ -48,19 +74,47 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## GERMANY
 
-+ *ex ante*: government (i. e., the chancellor) has to pass the IV in order to come into being
++ *ex ante*: vote takes place after general election; President chooses Kanzler/in, this is voted upon in the Bundestag; first after a passed vote, the Kanzler/in is appointed officially
 
 ## HUNGARY
 
-+ *ex ante*: the PM has to be elected first, before this he has no power
++ *ex ante*: the PM has to be affirmed first in the IV, before this he has no power
 
 ## IRELAND
 
-+ *ex ante*: Taoiseach has to be elected; second IV is cast on his cabinet; after this, both are in power
++ *ex ante*: Taoiseach has to be elected first, has no real power before this; second IV is cast on his cabinet; after this, both are in power
 
 ## ITALY
 
-+ *ex post*: IV is cast after appointment of gov. by President
++ *ex post*: IV is cast after appointment of gov. by President, which is formally in power by then
+
+## SPAIN
+
++ *ex ante*: investiture procedure takes place after general elections, PM is chosen by the King but then voted for or against in the procedure. As this PM is not formally in charge until he passed the vote, it is coded as 1
+
+## POLAND
+
++ *ex ante*: President appoints the PM-designate (and his suggestion of cabinet) - Sejm votes in favour of her/him (or not); if he/she passes the vote, he is appointed regularly
+
+## CZECH REPUBLIC
+
++ *ex post*: government and PM have their full powers after appointment through the president - but they have to seek the IV in a set timeframe (30 days after appointment)
+
+## ROMANIA
+
++ *ex ante*: PM is appointed, but is only PM-designate, until confirmed by IV
+
+## PORTUGAL
+
++ *ex post*: PM and cabinet are "designated" to come to power - but because of the decision rule = neg. majority and the future gov. does not need explicit support of the parliament, it is technically already in power
+
+## SWEDEN
+
++ *ex ante*: Speaker suggests a new PM on the basis of situation in parliament - PM is investet as soon as he is approved by the MPs through the IV
+
+## NETHERLANDS
+
++ 
 
 # Category II: Right to nominate
 
@@ -75,7 +129,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ## GERMANY
 
 + special here: de jure = President picks a candidate, Bundestag elects the candidate
-  + but de facto: the President always picked (and always will) the majority solution and convenes with the members of the Bundestag on whom he should choose
+  + but de facto: the President always picked (and always will) the majority solution and convenes with the members of the Bundestag on whom he should choose (therefore, I coded this as 0 "by parliament")
   
 ## HUNGARY
 
@@ -88,6 +142,34 @@ knitr::opts_chunk$set(echo = FALSE)
 ## ITALY
 
 + President appoints government
+
+## SPAIN
+
++ King nominates the PM who is to be invested or not
+
+## POLAND
+
++ Nomination through Head of State, which is the President
+
+## CZECH REPUBLIC
+
++ PM as well as government ministers are appointed by the President
+
+## ROMANIA
+
++ President of Romania appoints
+
+## PORTUGAL
+
++ President of Portugal appoints
+
+## SWEDEN
+
++ Appointment through Speaker of the Riksdag (coded as 0, "appointment by parliament")
+
+## NETHERLANDS
+
++ 
 
 
 # Category III: Who votes
@@ -119,6 +201,34 @@ knitr::opts_chunk$set(echo = FALSE)
 
 + Government has to acquire positive vote in both chambers
 
+## SPAIN
+
++ Chamber of Deputies, Senate has no say in the IV-procedure
+
+## POLAND 
+
++ Sejm votes
+
+## CZECH REPUBLIC
+
++ Chamber of Deputies votes, Senate exists as second chamber, but has no say concerning the IV
+
+## ROMANIA
+
++ Both chambers vote in a connected hearing of the gov. programme
+
+## PORTUGAL
+
++ Assembleia da Republicá votes (unicameral system)
+
+## SWEDEN
+
++ Sweden is unicameral since the reform of 1971; before that, only the Second Chamber had a crucial role in government formation process (so coded as 1, also before 1971)
+
+## NETHERLANDS
+
++ 
+
 
 # Category IV: Target of the vote
 
@@ -145,6 +255,35 @@ knitr::opts_chunk$set(echo = FALSE)
 ## ITALY
 
 + whole government is voted upon as a package
+
+## SPAIN
+
++ Target is the PM-to-be = coded as 1
+
+## POLAND
+
++ Target is whole cabinet (the PM and his ministers) = coded as 2
+  + one could also argue that it should be coded as 4, as the PM presents an exposé to the Sejm, as an outline of his gov. programme, but as the vote itself is (acc. to Zubek) cast on the cabinet-to-be, I coded this as 2
+
+## CZECH REPUBLIC
+
++ Target is the whole cabinet, consisting of the already appointed PM and his ministers = coded as 2
+
+## ROMANIA
+
++ Target is, as mentioned in Chiva's chapter about Romania, the government programme, so it is about a policy approach by the designated PM and his/her cabinet
+
+## PORTUGAL
+
++ Target is the government as a whole, but through a discussion of the government program, so it can be considered as 4
+
+## SWEDEN
+
++ Easy case, the target is the designated PM; so, I coded this as 1
+
+## NETHERLANDS
+
++ 
 
 # Category V: Investiture failure
 
@@ -175,6 +314,34 @@ knitr::opts_chunk$set(echo = FALSE)
 
 + no clear procedure: looking at Draghi cabinet being sworn in in Feb. '21 - possibilities for new elections, but also for negotiations with current government (therefor coded as NA)
 
+## SPAIN
+
++ new rounds of IV; with relaxation of decision rule in second round
+
+## POLAND
+
++ new rounds of IV (see special country rules above, there are up to three rounds before new elections are to be cast)
+
+## CZECH REPUBLIC
+
++ in case of failure, procedure will start anew = coded as 0
+
+## ROMANIA
+
++ new round of IV, but if this fails again, President can call new elections (if there is no new government to be formed within 60 days)
+
+## PORTUGAL
+
++ Negative IV-rules: if government is rejected, the informateur (President) chooses another formateur to form a new government
+
+## SWEDEN
+
++ Speaker has four attempts to designate a new PM - if all four rounds fail, new elections are to be held = coded as 0
+
+## NETHERLANDS
+
++ 
+
 # Category VI: Decision rule
 
 ## BELGIUM
@@ -203,12 +370,36 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## ITALY
 
-+ both chambers: simple majority
++ both chambers: simple majority - hence coded as 1
 
+## SPAIN
 
++ first round of IV is abs. majority, second round is simple majority, hence coded as 1
 
+## POLAND
 
++ first and second round of IV is absolute majority, lowered to simple majority in a possible third round, which has up to now never occured (hence coded as 1)
 
+## CZECH REPUBLIC
+
++ simple majority, so coded as 1
+
+## ROMANIA
+
++ absolute majority
+  + there is a quorum requirement: has to be 50% + 1 MP for the IV
+  
+## PORTUGAL
+
++ negative decision rule = coded as 0 (more on this in first paragraph)
+
+## SWEDEN
+
++ negative decision rule = coded as 0 (more on this in first paragraph)
+
+## NETHERLANDS
+
++ 
 
 
 
