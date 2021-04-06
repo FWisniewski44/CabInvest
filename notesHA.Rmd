@@ -402,6 +402,59 @@ knitr::opts_chunk$set(echo = FALSE)
 + 
 
 
+####################################
+
+# AMENDMENTS: COUNTRIES OUTSIDE RASCH-MARTIN-CHEIBUB 2015
+
+**Finland**
+For the *Finnish* case, see Paloheimo (2003) and the Finnish constitution. Information is coded from 1991 onwards, as there were a few amendmends made concerning investiture and the role of the PM.
+
+**Denmark**
+See [the Danish constitution, "Kapitel III"](https://www.regeringen.dk/grundloven/). As there is no formal investiture vote in Denmark to the knowing of the author, information here refer to the motion of no confidence.
+
+**Austria**
+See [the Austrian constitution, "Drittes Hauptstück, 2: Bundesregierung"](http://www.verfassungen.at/indexheute.htm). Austria is left out as it has no formal investiture procedure. The Bundespräsident designates a PM and he forms his government. Mostly majority governments.
+
+**Greece**
+Greek Constitution, Article 84. Absolute majority requirement.
+
+**Iceland**
+[Icelandic Constitution](https://www.government.is/library/01-Ministries/Prime-Ministrers-Office/constitution_of_iceland.pdf)
+[Cheibub, Rasch, Martin 2013: Istanbul Conference Paper](https://ecpr.eu/Filestore/paperproposal/ba2bdffd-a910-4bae-9c05-bb832db684a5.pdf): Iceland as deviant case - negative decision rule
+
+**Luxembourg**
+No real information about this in the constitution, as far as the author is informed.
+
+**Norway**
+See [Aardal and Bergh (2018)](https://www.tandfonline.com/doi/pdf/10.1080/01402382.2017.1415778?needAccess=true). Norway has no formal investiture vote, therefore it is fully excluded.
+
+**Bulgaria**
+See [Bulgarian Constitution, Art. 99](https://www.wipo.int/edocs/lexdocs/laws/en/bg/bg033en.pdf). Unlike Cheibub et al. 2013 in their Conference Paper, I coded the timing to be *ex ante* in Bulgaria, as the Bulgarian Constitution clearly speaks of a "*designated* PM". Maybe, there is a deviance, because Cheibub et al. were referring to 1997, whereas here, the Constitution is to be treated "as of 2007".
+
+**Estonia**
+See [Constitution of Estonia, §89](https://www.president.ee/en/republic-of-estonia/the-constitution/). Also, see [Cheibub et al. (2013), p. 14](https://ecpr.eu/Filestore/paperproposal/ba2bdffd-a910-4bae-9c05-bb832db684a5.pdf).
+
+**Latvia**
+See [Constitution of Latvia](https://likumi.lv/ta/en/id/57980-the-constitution-of-the-republic-of-latvia). Also, see [ParlGov Database Documentation, Döring and Manow (2021)](http://www.parlgov.org/documentation/country/).
+
+**Lithuania**
+
+
+**Malta**
+
+
+**Romania**
+
+
+**Slovakia**
+
+
+**Slovenia**
+
+
+
+
+
 
 
 

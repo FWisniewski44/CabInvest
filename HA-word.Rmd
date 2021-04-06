@@ -1,10 +1,12 @@
 ---
-title: "HA Parlamentsforschung"
+title: "Parlamentarisches Mitspracherecht bei Regierungskoalitionen"
+subtitle: "Die Auswirkung von Investiturregeln auf die Dauer von Regierungsbildungen in Europa"
+abstract: "Hier sollte das Abstract stehen. Maximal 200 Wörter. Fließtext der Arbeit zwischen 15 und 20 Seiten."
 author: "Florian Wisniewski"
-date: "4/2/2021"
+date: "`r Sys.Date()`"
 output:
   word_document:
-    template_docx: "/Users/flo/Documents/Uni/template-Rmd.docx"
+    reference_docx: "/Users/flo/Documents/Uni/template-Rmd.docx"
     toc: TRUE
     number_sections: TRUE
 ---
@@ -61,30 +63,51 @@ library(ggpubr)
 erdda <- read_dta(file = "/Users/flo/Desktop/data/erdda/erdda_b-version-stata12.dta")
 
 # load own modified erdda
-
+investErdda <- read_xls(path = "/Users/flo/Desktop/data/erdda/erdda_modified_invest.xls")
 
 ```
 
 # Einleitung
 
-+ Erkenntnisinteresse ist, ob es neben den Auswirkungen der Investiturregeln auf Minderheitsregierungen nach Cheibub et al. 2019 auch welche auf Regierungen allgemein gibt?
+<!-- + Erkenntnisinteresse ist, ob es neben den Auswirkungen der Investiturregeln auf Minderheitsregierungen nach Cheibub et al. 2019 auch welche auf Regierungen allgemein gibt? -->
 
-# Hauptteil
+Nach der Bundestagswahl 2017 wurde ein neuer Rekord aufgestellt: 172 Tage dauerte die daraus resultierende Phase der Regierungsbildung - damit wurde der vorherige Bestwert von 86 Tagen mehr als verdoppelt (vgl. Janson 2017). Dass Koalitionsverhandlungen keine einfache Angelegenheit sind und es nur verständlich ist, dass es bei derart wichtigen Absprachen viele Parteien gibt, die es auch anzuhören gilt, steht außer Frage.
 
-## Theoretischer Hintergrund
+Auch die politik und sozialwissenschaftliche Forschung setzt sich mit der Thematik der Dauer der Regierungsbildung auseinander. Gerade aus dieser Sichtweise heraus steht schon seit längerer Zeit die Frage nach den Faktoren im Raum, welche die Länge dieser Dauer beeinflussen. Mit dem Aufkommen neuer informationstechnologischer und statistischer Methoden der Untersuchung größerer Datensätze in den 1980er und 1990er Jahren stieg auch die Relevanz dieses Themas in der Forschung weiter an.
+
+Bei den bisherigen Versuchen, Antwortmöglichkeiten herauszuarbeiten, wurde bereits eine Vielzahl von Variablen untersucht, beispielsweise der Zeitpunkt einer Regierungsbildung, ob die neue Regierung eine Fortsetzung der vorherigen wäre oder ob es sich um eine neue Kabinettszusammenstellung handeln würde, wie groß die ideologischen Abstände der Verhandlungspositionen der Parteien im jeweiligen Parlament sind. Eine Variable, die ebenfalls bereits seit dieser Zeit in keiner Untersuchung fehlen durfte, ist jene der *Investiturregeln*. Bei der Investitur handelt es sich explizit um den Fall, dass eine Regierung, um endgültig ins Amt zu kommen, durch das Parlament bestätigt werden muss. Dies geschieht eben durch ein Investitur*votum*, bei dem das Parlament als Legislativorgan die Möglichkeit hat, den Regierungsprozess zu Unterbrechen, wenn es mit der zu bildenden Regierung nicht einverstanden ist - es liegt dabei also ein Entscheidungsinstrument und Kennzeichen von Gewaltenteilung in Demokratien vor.
+
+Doch gerade bei dieser Variable handelt es sich um einen besonderen Fall. Wie Cheibub, Martin und Rasch zeigen konnten, wurde jene Prozedur von der Forschung meist eher "stiefmütterlich" und unterkomplex behandelt. Aus diesem Grund hatten die Autoren es sich zum Ziel gesetzt, dieser Problematik entgegenzutreten und haben als Resultat ihrer Forschung die Prozedur der Investitur auf *sechs theoretisch relevante Ebenen* heruntergebrochen. Vorliegende Arbeit hat es sich nun zum Ziel gesetzt, auf Basis von bisheriger, zeitlich jedoch etwas weniger aktueller Forschungsliteratur zum Thema, die genannten sechs Investitur-Ebenen nach Cheibub et al. (2019) einzubeziehen und somit die Auswirkungen von Investiturregeln *an sich* auf die Dauer von Regierungsbildung auf dieser Basis genauer in den Blick zu nehmen und herauszuarbeiten.
+
+# Theoretischer Hintergrund
 
 + Aufbau meiner Überlegungen auf Cheibub/Martin/Rasch (2019) und den Oxford-Sammelband, herausgegeben von Rasch/Martin/Cheibub (2015), mit den jeweiligen Länderstudien
 
-## Daten: ERDDA, aber selbst modifiziert
++ Orientierung an den Modellen von Diermeier/van Roozendaal (1998) und Golder (2010) zur Bargaining Duration
 
-
-## Methodik
+# Methodik
 
 + ereignisanalytisches Vorgehen über Cox PH-Modelle, da Modellierung des Einflusses über Zeit
 
 + dabei: semi-parametrische Modelle - Modellvoraussetzungen, dass die PH-Assumption von nicht proportional verteilten Einflüssen über Zeit getroffen ist
 
-## Analyse der Daten: Bargaining Duration vs. 6 Investitur-Dimensionen + Kontrollen
+# Daten: ERDDA, aber selbst modifiziert
+
+Nun soll kurz auf die Daten eingegangen werden, welche dieser Arbeit zugrundeliegen. Hierbei wurde zunächst der in der Forschung bereits bekannte ERDDA-Datensatz von Andersson, Bergman und Ersson (2014) als Ausgangspunkt verwendet. Dieser beinhaltet Informationen für 29 europäische Staaten zu deren politischen Systemen. Dabei gliedert er sich thematisch in die Bereiche "Struktur", "Präferenzen", "Institutionen", "Verhandlungsumgebung" und "Kritische Events". Darüber hinaus enthält er ebenfalls räumliche und zeitliche Angaben zu den Staaten und Angaben über die geformten Kabinette. Zeitlich umfasst er Daten zu europäischen Kabinette von der unmittelbaren Nachkriegszeit bis 2010.
+
+Für vorliegende Arbeit zur Untersuchung der Dauer von Regierungsbildung sind gerade die Bereiche "Institutionen" und "Verhandlungsumgebung" von größerer Bedeutung. Außerdem findet sich die Zeitvariable, welche im für die ereignisanalytischen Cox-Modelle nötig ist, im Datensatz wieder (*formDur*).
+
+## Codierung der Daten zu den Investitur-Ebenen nach Cheibub et al. (2019)
+
+Da jedoch im ERDDA-Datensatz, wie zu erwarten war, nicht die von Cheibub et al. (2019) herausgearbeiteten sechs Ebenen des Investitur-Prozesses enthalten waren, wurden diese vom Autor selbst codiert und an den Datensatz angefügt.
+
+Um die nötigen Informationen zu beinhalten, wurde sich hier als Quelle vor allem auf den Sammelband *Parliaments and Government Formation. Unpacking Investiture Rules* gestützt, welcher ebenfalls von Bjørn Erik Rasch, Shane Martin und José Antonio Cheibub im Jahr 2015 herausgegeben wurde. Darin finden sich Fallstudien zu 16 Staaten. Von diesen 16 Fallstudien musste jene zu Indien aufgrund von Nicht-Existenz im ERDDA-Datensatz ausgeschlossen werden. Für alle anderen Staaten wurden die Informationen aus den Fallstudien anhand eines selbst erstellten Codierschemas in den ERDDA-Datensatz integriert, um für diese Arbeit nutzbar gemacht zu werden.
+
+Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informationen zu 29 Staaten hinterlegt sind, wurden für die restlichen Staaten weitere Aufsätze zum Thema, sowie teilweise sofern notwendig die Verfassungen dieser Staaten, herangezogen, um die Informationen möglichst flächendeckend integrieren und nutzen zu können. Der [Appendix](https://github.com/FWisniewski44/CabInvest) dieser Arbeit enthält neben Informationen zum Codierschema in Form eines eigenen Codebooks für die sechs neu hinzugefügten Variablen auch etwaige Klarstellungen, auf welcher Basis diese Codierungen vorgenommen worden sind.
+
+
+
+# Analyse der Daten: Bargaining Duration vs. 6 Investitur-Dimensionen + Kontrollen
 
 
 # Ergebnisse der Analyse, Fazit, Schluss?
@@ -96,9 +119,37 @@ erdda <- read_dta(file = "/Users/flo/Desktop/data/erdda/erdda_b-version-stata12.
 
 + Rasch, Bjørn Erik; Martin, Shane; Cheibub, José Antonio (2015, Hrsg.): *Parliaments and Government Formation. Unpacking Investiture Rules*, Oxford University Press, Oxford. Abgerufen online unter: https://oxford.universitypressscholarship.com/view/10.1093/acprof:oso/9780198747017.001.0001/acprof-9780198747017-chapter-1 (Stand: 02.04.2021).
 
++ Janson, Matthias (2017): *Noch nie mussten die deutschen Wähler so lange warten*, Artikel via Statista, abgerufen unter: https://de.statista.com/infografik/11320/dauer-der-regierungsbildung-in-deutschland/ (Stand: 06.06.2021).
+
++ Golder, Sona (2010): *Bargaining Delays in the Government Formation Process*, Comparative Political Studies, 43:3, S. 3-32.
+
++ Diermeier, Dennis; van Roozendaal, Peter (1998): *The Duration of Government Formation Processes in Western Multi-Party Democracies*, British Journal of Political Science, 28:4, S. 609-626.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+# Eigenständigkeitserklärung
+
+Ich erkläre hiermit, dass ich die Hausarbeit mit dem Titel *"Regierende Populisten und ideologische Heterogenität anhand des Beispiels Griechenland. Zusammenarbeit trotz oder Spaltung wegen politischer Differenzen?"* im Rahmen der Lehrveranstaltung "Politische Soziologie II: Soziokulturelle und ökonomische Ursachen des Populismus" unter der Leitung von Prof. Dr. Nils Steiner im Wintersemester 2020/2021 selbständig angefertigt, keine anderen Hilfsmittel als die im Quellen- und Literaturverzeichnis genannten benutzt und alle aus den Quellen und der Literatur wörtlich oder sinngemäß übernommenen Stellen als solche gekennzeichnet habe.
+
+
+
+Bamberg, den 12.04.2021
+
+
+
+Unterschrift Florian Wisniewski
 
 
 

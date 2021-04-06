@@ -1,0 +1,59 @@
+---
+title: "Codebook: Datensatz 'investERDDA'"
+subtitle: "Erweiterung des ERDDA durch Daten zum Investitur-Prozess nach Cheibub et al. (2019)"
+abstract: "Dieser Datei ist das Codierschema für den Datensatz 'investERDDA' (Wisniewski 2021) zu entnehmen. Die sechs am Ende angefügten Variablen fußen theoretisch auf der Grundlage der von Cheibub et al. (2019) herausgearbeiteten sechs Ebenen von Investiturvoten. Informationen wurden aus Rasch et al. (2015), sowie aus den Aufsätzen gewonnen, welche am Ende dieses Codebooks im Literaturverzeichnis aufgeführt werden."
+author: "Florian Wisniewski"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    number_sections: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Vorbemerkungen
+
+
+
+# invest_timing
+
+
+
+# invest_rightToNominate
+
+
+
+# invest_whoVotes
+
+
+
+# invest_voteTarget
+
+
+
+# invest_failure
+
+
+
+# invest_decisionRule
+
+
+
+# Literaturangaben
+
++ Cheibub, José Antonio; Martin, Shane; Rasch, Bjørn Erik (2019): *Investiture rules and formation of minority governments in European parliamentary democracies*, Party Politics, 27:2 (2021), S. 351-362.
+
++ Rasch, Bjørn Erik; Martin, Shane; Cheibub, José Antonio (2015, Hrsg.): *Parliaments and Government Formation. Unpacking Investiture Rules*, Oxford University Press, Oxford. Abgerufen online unter: https://oxford.universitypressscholarship.com/view/10.1093/acprof:oso/9780198747017.001.0001/acprof-9780198747017-chapter-1 (Stand: 02.04.2021).
+
++ Döring, Herbert; Manow, Phillipp (2021): *ParlGov Database Documentation*, abgerufen unter: http://www.parlgov.org/documentation/country/ (Stand: 06.04.2021).
+
+
+
+
+
+
+
+
+

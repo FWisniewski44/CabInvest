@@ -42,11 +42,52 @@ library(ggpubr)
 
 erdda <- read_dta(file = "/Users/flo/Desktop/data/erdda/erdda_b-version-stata12.dta")
 
-investErdda <- read_xls(path = "")
+investErdda <- read_xls(path = "/Users/flo/Desktop/data/erdda/erdda_modified_invest.xls")
 
-investErdda <- rename("abs_dur")
+pdda <- read_sav(file = "/Users/flo/Downloads/the Comparative Parliamentary Democracy Data Archive/the Comparative Parliamentary Democracy Data Archive.sav")
 
-coxph(data = investErdda, Surv(investErdda$) ~ )
+Surv(time = pdda$v167y, time2 = pdda$v167y2)
+Surv(time = pdda$v167y2)
+
+Surv(time = investErdda$v600e, time2 = lead(investErdda$v600e))
+
+
+# renaming
+
+investErdda %>% rename("formDur" = "v600e", "post_election_cab" = "v303e",
+                       )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+freq(erdda$v600e)
+
+firstEst <- coxph(data = investErdda, Surv(time = investErdda$v600e) ~ invest_timing + invest_rightToNominate + invest_whoVotes + 
+                    invest_voteTarget + invest_failure + invest_decisionRule)
+
+Surv(time = investErdda$v600e)
+# "event"	in Surv:
+# The status indicator, normally 0=alive, 1=dead. Other choices are TRUE/FALSE (TRUE = death) or 1/2 (2=death).
+# For interval censored data, the status indicator is 0=right censored, 1=event at time, 2=left censored, 3=interval censored.
+# For multiple endpoint data the event variable will be a factor, whose first level is treated as censoring.
+# Although unusual, the event indicator can be omitted, in which case all subjects are assumed to have an event.
+
+
+
+summary(firstEst)
+
+fre(investErdda$v008e)
 
 
 
