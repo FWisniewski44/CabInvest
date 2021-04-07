@@ -1,0 +1,513 @@
+---
+title: "Research Notes: Investiture Rules"
+subtitle: "Subcategories according to Cheibub, Martin and Rasch (2019)"
+author: "Florian Wisniewski"
+date: "`r Sys.Date()`"
+output:
+  word_document:
+    number_sections: TRUE
+    reference_docx: "/Users/flo/Desktop/investiture/notesHA-word.docx"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# What will be done?
+
++ Create variables for the following 6 subcategories of an investiture vote, based on the data in erdda and literature (Rasch, Martin, Cheibub: Unpacking Investiture Rules)
+
++ Check relationship between those subcategories for all types of governments in ERDDA: is there a relationship between investiture procedures and cabinet bargaining duration?
+
++ Definition of bargaining duration
+  + “Cabinet: Date in” = end point of bargaining
+  + “Date of General Elections” = beginning point of bargaining
+  + This is concluded into one Variable, which already is available through ERDDA (“v600e”, which equals “cabinet bargaining duration”)
+
+
+# Special remarks/comments in some cases, concerning the Oxford volume by Cheibub, Rasch and Martin (2015)
+
+## BELGIUM
+
++ Change in constitution 1993
+
+## GREAT BRITAIN
+
++ Queen's Speech as mechanism is not particularly a parliamentary investiture vote - but Kelso considers it to be at least some form of investiture in the British case study
+  + This argumentation is good, I understand what she is trying to convey – but is this enough to include it? This shall be decided later on.
+
+## GERMANY
+
++ Ballots in chancellor's investiture are cast in secrecy - it is a "Gewissensentscheidung".
+
+## IRELAND
+
++ In case the Taoiseach is not approved, there is no real rule as to what has to be done
+
+## SPAIN
+
++ Change of decision rule after first IV round fails
+
+## POLAND
+
++ High degree of cooperation between the Sejm and the Polish President in IV procedure
+  + *Round 1*: President appoints cabinet; Sejm votes - if IV passed, President appoints within 14 days (abs. majority), if not = Round 2
+  + *Round 2* (if R1 failed): Sejm selects new cabinet and votes - if IV then passed, President appoints immediately (abs. majority), if not = Round 3
+  + *Round 3* (if R2 also failed): R2 fails, if Sejm failed to select new cabinet within 14 days; then, the President has the right to appoint another cabinet; if this fails the vote in the Sejm, too, new elections are called by the President
+  
+## PORTUGAL
+
++ Negative investiture rules - it is up to the parliament to provide a negative majority to disapprove of a cabinet
+  + As the president appoints a "designated" cabinet, but this cabinet (because of the negative majority rules) does not have to gain support of parliament, Leston-Bandeira et al. state that Portugal can also be considered as an *ex post* IV
+
+## SWEDEN
+
++ Negative IV rules: PM is invested if less than half of the MPs vote **against** him/her
+
++ Constitutional reform in 1975: before = appointment of PM directly through the monarch, no IV procedure; after 1975, IV procedure, designated PM appointed by Speaker of the Riksdag
+  +	Thus, coded from 1975 onwards, as there was no point for discussing it earlier on
+
+## NETHERLANDS
+
++ It is not necessarily so, that a government dissolution has to lead to new general elections (new formateur)
++ Netherlands not included, IV-procedure behind closed doors, no possibility to look into this (the Netherlands are, up to now, by far the most complicated case in this selection)
+
+## FRANCE
+
++ Not included, as there is no formal investiture, too (resemblance with the Dutch case, although not as complicated). There is a mechanism, but it is, to my understanding, extremely time-varying.
+
+
+# Category I: Timing
+
+## BELGIUM
+
++ *ex post*: conducted **AFTER** monarch formally appointed coalition; gov. is already in charge
+
+## GREAT BRITAIN
+
++ *ex post*: conducted **AFTER** monarch formally appointed prime minister to form a government; gov. is already in charge
+
+## GERMANY
+
++ *ex ante*: vote takes place after general election; President chooses Kanzler/in, this is voted upon in the Bundestag; first after a passed vote, the Kanzler/in is appointed officially
+
+## HUNGARY
+
++ *ex ante*: the PM has to be affirmed first in the IV, before this he has no power
+
+## IRELAND
+
++ *ex ante*: Taoiseach has to be elected first, has no real power before this; second IV is cast on his cabinet; after this, both are in power
+
+## ITALY
+
++ *ex post*: IV is cast after appointment of gov. by President, which is formally in power by then
+
+## SPAIN
+
++ *ex ante*: investiture procedure takes place after general elections, PM is chosen by the King but then voted for or against in the procedure. As this PM is not formally in charge until he passed the vote, it is coded as 1
+
+## POLAND
+
++ *ex ante*: President appoints the PM-designate (and his suggestion of cabinet) - Sejm votes in favour of her/him (or not); if he/she passes the vote, he is appointed regularly
+
+## CZECH REPUBLIC
+
++ *ex post*: government and PM have their full powers after appointment through the president - but they have to seek the IV in a set timeframe (30 days after appointment)
+
+## ROMANIA
+
++ *ex ante*: PM is appointed, but is only PM-designate, until confirmed by IV
+
+## PORTUGAL
+
++ *ex post*: PM and cabinet are "designated" to come to power - but because of the decision rule = neg. majority and the future gov. does not need explicit support of the parliament, it is technically already in power
+
+## SWEDEN
+
++ *ex ante*: Speaker suggests a new PM on the basis of situation in parliament - PM is investet as soon as he is approved by the MPs through the IV
+
+
+# Category II: Right to nominate
+
+## BELGIUM
+
++ Constitution says: "*King* appoints and dismisses cabinet ministers"
+
+## GREAT BRITAIN
+
++ The Queen appoints the prime minister; but: since 1974, all parties have a designated leader, so the role of this appointment is not that important
+
+## GERMANY
+
++ special here: de jure = President picks a candidate, Bundestag elects the candidate
+  + but de facto: the President always picked (and always will) the majority solution and convenes with the members of the Bundestag on whom he should choose (therefore, I coded this as 0 "by parliament")
+  
+## HUNGARY
+
++ President has right to nominate the PM-to-be
+
+## IRELAND
+
++ Nomination of the Taoiseach is up to the Second Chamber, the Dáil
+
+## ITALY
+
++ President appoints government
+
+## SPAIN
+
++ King nominates the PM who is to be invested or not
+
+## POLAND
+
++ Nomination through Head of State, which is the President
+
+## CZECH REPUBLIC
+
++ PM as well as government ministers are appointed by the President
+
+## ROMANIA
+
++ President of Romania appoints
+
+## PORTUGAL
+
++ President of Portugal appoints
+
+## SWEDEN
+
++ Appointment through Speaker of the Riksdag (coded as 0, "appointment by parliament")
+
+
+# Category III: Who votes
+
+## BELGIUM
+
++ 1919 until 1995: both chambers
++ from 1995 onwards: only one
+
+## GREAT BRITAIN
+
++ Queen's speech is delivered to both the House of Commons and the House of Lords
+  + Lords: only followed by a debate; no vote
+  + Commons: followed by a longer debate; designated opposition can make amendments - "stress test" for the coming government - at the end, there is a vote
+  
+## GERMANY
+
++ The Bundestag, so one chamber
+
+## HUNGARY
+
++ President appoints - Parliament elects; HUN only one chamber
+
+## IRELAND
+
++ Vote is cast by the Dáil
+
+## ITALY
+
++ Government has to acquire positive vote in both chambers
+
+## SPAIN
+
++ Chamber of Deputies, Senate has no say in the IV-procedure
+
+## POLAND 
+
++ Sejm votes
+
+## CZECH REPUBLIC
+
++ Chamber of Deputies votes, Senate exists as second chamber, but has no say concerning the IV
+
+## ROMANIA
+
++ Both chambers vote in a connected hearing of the gov. programme
+
+## PORTUGAL
+
++ Assembleia da Republicá votes (unicameral system)
+
+## SWEDEN
+
++ Sweden is unicameral since the reform of 1971; before that, only the Second Chamber had a crucial role in government formation process (so coded as 1, also before 1971)
+
+
+
+# Category IV: Target of the vote
+
+## BELGIUM
+
++ whole cabinet
+
+## GREAT BRITAIN
+
++ combination: Queen's speech is a vague outline of gov. programme; but: if failure of vote, the PM is likely to be expected to resign, so it is somehow also a vote on his position
+
+## GERMANY
+
++ target is the chancellor-to-be, so head of government, coded as 1
+
+## HUNGARY
+
++ Head of state, PM, so coded as 1
+
+## IRELAND
+
++ Target of first IV is the Taoiseach; subsequently, he presents to the Dáil his cabinet ministers, which are voted for/against in a second IV
+
+## ITALY
+
++ whole government is voted upon as a package
+
+## SPAIN
+
++ Target is the PM-to-be = coded as 1
+
+## POLAND
+
++ Target is whole cabinet (the PM and his ministers) = coded as 2
+  + one could also argue that it should be coded as 4, as the PM presents an exposé to the Sejm, as an outline of his gov. programme, but as the vote itself is (acc. to Zubek) cast on the cabinet-to-be, I coded this as 2
+
+## CZECH REPUBLIC
+
++ Target is the whole cabinet, consisting of the already appointed PM and his ministers = coded as 2
+
+## ROMANIA
+
++ Target is, as mentioned in Chiva's chapter about Romania, the government programme, so it is about a policy approach by the designated PM and his/her cabinet
+
+## PORTUGAL
+
++ Target is the government as a whole, but through a discussion of the government program, so it can be considered as 4
+
+## SWEDEN
+
++ Easy case, the target is the designated PM; so, I coded this as 1
+
+
+# Category V: Investiture failure
+
+## BELGIUM
+
++ Nothing happens, government stays in power - except for no confidence vote **with** an alternative PM suggested
+  + therefore, I code it as 0, even though it is highly dependent on what the chamber is doing after the failure, and only if this is done accordingly, there are new elections to be held
+  
+## GREAT BRITAIN
+
++ in case of failure, PM would most likely be expected to resign
+  + new elections OR a newly appointed PM could be the next step, with new elections being likely, which is why I coded it as 1
+  
+## GERMANY
+
++ if failed in first round (presidents pick, abs. maj.), second round is Bundestag pick, abs. maj.
++ if failed again, third/final round is plurality; minority chancellor-elect is to be picked by discretion by President (has never happened)
+
+## HUNGARY
+
++ new IV is cast
+
+## IRELAND
+
++ there is no real procedure for when the IV fails - could be new general elections, could also be that there is another round of casting IVs (as this is stated as "unclear" in the literature, I decided to code this as NA)
+
+## ITALY
+
++ no clear procedure: looking at Draghi cabinet being sworn in in Feb. '21 - possibilities for new elections, but also for negotiations with current government (therefor coded as NA)
+
+## SPAIN
+
++ new rounds of IV; with relaxation of decision rule in second round
+
+## POLAND
+
++ new rounds of IV (see special country rules above, there are up to three rounds before new elections are to be cast)
+
+## CZECH REPUBLIC
+
++ in case of failure, procedure will start anew = coded as 0
+
+## ROMANIA
+
++ new round of IV, but if this fails again, President can call new elections (if there is no new government to be formed within 60 days)
+
+## PORTUGAL
+
++ Negative IV-rules: if government is rejected, the informateur (President) chooses another formateur to form a new government
+
+## SWEDEN
+
++ Speaker has four attempts to designate a new PM - if all four rounds fail, new elections are to be held = coded as 0
+
+
+# Category VI: Decision rule
+
+## BELGIUM
+
++ Coded as negative majority
+  + until 1995: ex post consultation which is not obligatory
+  + from 1995: explicitly stated = negative majority needed
+
+## GREAT BRITAIN
+
++ Coded as simple majority, because thats the AYE-NAY-vote in the Commons
+
+## GERMANY
+
++ easy case, coded as absolute majority, as third stage of failure has never happened and most likely never will
+
+## HUNGARY
+
++ absolute majority (100 of the 199 MPs, if everyone attends)
+
+## IRELAND
+
++ for Taoiseach: more yes, than no votes (so, as it is some kind of majority, I coded this as 1)
+
++ apparently the same for second IV
+
+## ITALY
+
++ both chambers: simple majority - hence coded as 1
+
+## SPAIN
+
++ first round of IV is abs. majority, second round is simple majority, hence coded as 1
+
+## POLAND
+
++ first and second round of IV is absolute majority, lowered to simple majority in a possible third round, which has up to now never occured (hence coded as 1)
+
+## CZECH REPUBLIC
+
++ simple majority, so coded as 1
+
+## ROMANIA
+
++ absolute majority
+  + there is a quorum requirement: has to be 50% + 1 MP for the IV
+  
+## PORTUGAL
+
++ negative decision rule = coded as 0 (more on this in first paragraph)
+
+## SWEDEN
+
++ negative decision rule = coded as 0 (more on this in first paragraph)
+
+
+# AMENDMENTS: COUNTRIES OUTSIDE RASCH-MARTIN-CHEIBUB 2015
+
+**Finland**
+
+For the *Finnish* case, see Paloheimo (2003) and the Finnish constitution. Information is coded from 1991 onwards, as there were a few amendments made concerning investiture and the role of the PM.
+
+**Denmark**
+
+See [the Danish constitution, "Kapitel III"](https://www.regeringen.dk/grundloven/). As there is no formal investiture vote in Denmark to the knowing of the author, information here refer to the motion of no confidence.
+
+**Austria**
+
+See [the Austrian constitution, "Drittes Hauptstück, 2: Bundesregierung"](http://www.verfassungen.at/indexheute.htm). Austria is left out as it has no formal investiture procedure. The Bundespräsident designates a PM and he forms his government. Mostly majority governments.
+
+**Greece**
+
+Greek Constitution, Article 84. Absolute majority requirement.
+
+**Iceland**
+
+[Icelandic Constitution](https://www.government.is/library/01-Ministries/Prime-Ministrers-Office/constitution_of_iceland.pdf)
+[Cheibub, Rasch, Martin 2013: Istanbul Conference Paper](https://ecpr.eu/Filestore/paperproposal/ba2bdffd-a910-4bae-9c05-bb832db684a5.pdf): Iceland as deviant case - negative decision rule
+
+**Luxembourg**
+
+No real information about this in the constitution, as far as the author is informed.
+
+**Norway**
+
+See [Aardal and Bergh (2018)](https://www.tandfonline.com/doi/pdf/10.1080/01402382.2017.1415778?needAccess=true). Norway has no formal investiture vote, therefore it is fully excluded.
+
+**Bulgaria**
+
+See [Bulgarian Constitution, Art. 99](https://www.wipo.int/edocs/lexdocs/laws/en/bg/bg033en.pdf). Unlike Cheibub et al. 2013 in their Conference Paper, I coded the timing to be *ex ante* in Bulgaria, as the Bulgarian Constitution clearly speaks of a "*designated* PM". Maybe, there is a deviance, because Cheibub et al. were referring to 1997, whereas here, the Constitution is to be treated "as of 2007".
+
+**Estonia**
+
+See [Constitution of Estonia, §89](https://www.president.ee/en/republic-of-estonia/the-constitution/). Also, see [Cheibub et al. (2013), p. 14](https://ecpr.eu/Filestore/paperproposal/ba2bdffd-a910-4bae-9c05-bb832db684a5.pdf).
+
+**Latvia**
+
+See [Constitution of Latvia](https://likumi.lv/ta/en/id/57980-the-constitution-of-the-republic-of-latvia). The President of Latvia has extensive competence in the country's political system, he appoints the PM and upon suggestion (by the PM) his/her ministers. Apparently, there **is** an IV procedure, it appears to be based on relative majority, but this is the only information retrievable for the author at the moment. The constitution itself is based on the pre-WW2-version of 1922, which is itself inspired by Weimar Germany and the Swiss constitution - but it states no clear IV-rules that can be applied to the investERDDA, without having a country expert check this again. Further info in [Ikstens/Balcere in Bergman et al. 2019](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198844372.001.0001/oso-9780198844372-chapter-7).
+
+**Lithuania**
+
+See [Constitution of Lithuania, especially Art. 92 and the Section about the Seimas](https://en.wikisource.org/wiki/Constitution_of_Lithuania#Article_92):
+
+> "*The Prime Minister shall, with the approval of the Seimas, be appointed or dismissed by the President of the Republic*. The Ministers shall be appointed by the President of the Republic on the nomination of the Prime Minister. The Prime Minister, within 15 days of being appointed, shall present the Government which he or she has formed and which has been approved by the President of the Republic to the Seimas and shall submit the programme of its activities to the Seimas for consideration. The Government shall return its powers to the President of the Republic after the Seimas elections or upon electing the President of the Republic. A new Government shall be empowered to act after the Seimas approves its programme by majority vote of the Seimas members participating in the sitting."
+
+Also, see [ParlGov Database Documentation, Döring and Manow (2021)](http://www.parlgov.org/documentation/country/) and [Matonyte 2019 in Bergman et al. 2019](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198844372.001.0001/oso-9780198844372-chapter-8).
+
+The situation in Lithuania is a bit different, as apparently, there are two investiture votes cast by the Seimas, of which one concerns the PM-designé (appointed by the President; if the Seimas approves of her/him being the new *formateur*, he then is granted the chance to form a government), and the other being cast on the formed government as a whole afterwards. I will treat these two interchangeably as "one" vote, that is cast on both the designated PM **and** the government he/she forms. Also, Matonyte treats the day of the second IV as "Day in".
+
+Should the IV fail, we only have empirical evidence of what happens (see Matonyte 2019). Therefore, I coded it accordingly (0 = new IV).
+
+**Malta**
+
+See [the Constitution of Malta, Art. 76, Art. 79, Art. 80 & Art. 81](https://en.wikisource.org/wiki/Constitution_of_Malta#The_Cabinet._(art._80)).
+
+The Maltese Constitution does not include an IV. The procedure of a vote of no confidence is specified in Art. 76 and Art. 81. Therefore, I exclude Malta from the analysis.
+
+**Slovakia**
+
+See [the Constitution of Slovakia](https://www.prezident.sk/upload-files/46422.pdf).
+
+> Article 113:
+"The *Government* shall be obliged, within thirty days of its nomination, to present itself to the National Council of the Slovak Republic, *submit its Government Programme* and ask for a vote of confidence."
+
+See also [Szomolanyi/Karvai in Bergman et al. (2019)](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198844372.001.0001/oso-9780198844372-chapter-11).
+
+According to the Constitution of the Slovak Republic, Section 2, Art. 110, 111, 113, both the PM and the ministers of the government are appointed by the president and sworn in before turning to the cabinet to seek a vote of confidence (IV). So, I deduce it to be, like the Italian system, an *ex post* investiture vote.
+
+As the Slovak Republic is a *unicameral* system, only one chamber votes. And as the constitution is understood, the vote is cast on the whole cabinet, as well as its government programme (Art. 113).
+
+The decision rule is being empirically deduced from Szomolanyi and Karvai (2019), p. 445: the table suggests, that it is negative majority, because there were never "pro"-government votes recorded since the Mečiar I cabinet from 1992.
+In case of investiture failure, it is required to turn to Art. 102 (e), which states, that the president may dissolve parliament, if the government did not manage to pass the IV procedure. But on the other hand, Szomolanyi and Karvai state that if one formateur fails, he turns to another. And according to Cheibub et al. (2013), there are 3 rounds of IVs in practice in the Slovak Republic before parliament would be dissolved. So, I will code this as 0, and not as a 1, because the President appoints by convention as *formateur* the party with the most votes after the election - which also means that, if this party does not have actual potential to form a viable coalition, it is appointed nevertheless. So, the President may speculate on a fruitful outcome of the second IV round - he may choose another *formateur* according to Szomolanyi and Karvai (2019).
+
+**Slovenia**
+
+See [the Constitution of Slovenia, especially Section "č) The Government", Art. 110, 111](https://en.wikisource.org/wiki/Constitution_of_Slovenia#č)_The_Government).
+Further information taken from [Krašovec and Krpič in Bergman et al. (2019)](https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198844372.001.0001/oso-9780198844372-chapter-12).
+
+The Slovenian case has a very clear constitutional basis. Art. 111 reads as follows:
+
+> Article 111 (Election of the President of the Government):
+"After consultation with the leaders of parliamentary groups *the President of the Republic proposes to the National Assembly a candidate for President of the Government*.
+The President of the Government is elected by the National Assembly *by a majority vote of all deputies unless otherwise provided by this Constitution*. Voting is by secret ballot.
+If such candidate does not receive the necessary majority of votes, the President of the Republic may after renewed consultation *propose within fourteen days a new candidate*, or the same candidate again, and candidates may also be proposed by parliamentary groups or a minimum of ten deputies. If within this period several candidates have been proposed, each one is voted on separately beginning with the candidate proposed by the President of the Republic, and if this candidate is not elected, *a vote is taken on the other candidates in the order in which they were proposed*.
+*If no candidate is elected, the President of the Republic dissolves the National Assembly and calls new elections, unless within forty-eight hours the National Assembly decides by a majority of votes cast by those deputies present to hold new elections for President of the Government*, whereby a majority of votes cast by those deputies present is sufficient for the election of the candidate. In such new elections a vote is taken on candidates individually in order of the number of votes received in the earlier voting and then on the new candidates proposed prior to the new vote, wherein any candidate proposed by the President of the Republic takes precedence.
+If in such elections no candidate receives the necessary number of votes, the President of the Republic dissolves the National Assembly and calls new elections."
+
+This is enough information to keep Slovenia in the data set.
+
+# Literature
+
++ Cheibub, José Antonio; Martin, Shane; Rasch, Bjørn Erik (2019): *Investiture rules and formation of minority governments in European parliamentary democracies*, Party Politics, 27:2 (2021), S. 351-362.
+
++ Cheibub, José Antonio; Martin, Shane; Rasch, Bjørn Erik (2013): *The Investiture Vote and the Formation of Minority Parliamentary Governments*, Draft for ECPR Conference, Bordeaux 2013.
+
++ Rasch, Bjørn Erik; Martin, Shane; Cheibub, José Antonio (2015, Hrsg.): *Parliaments and Government Formation. Unpacking Investiture Rules*, Oxford University Press, Oxford. Abgerufen online unter: https://oxford.universitypressscholarship.com/view/10.1093/acprof:oso/9780198747017.001.0001/acprof-9780198747017-chapter-1 (Stand: 02.04.2021).
+
++ Döring, Herbert; Manow, Phillipp (2021): *ParlGov Database Documentation*, abgerufen unter: http://www.parlgov.org/documentation/country/ (Stand: 06.04.2021).
+
++ Bergman, Torbjørn; Ilonszki, Gabriella; Müller, Wolfgang (2019): *Coalition Governance in Central Eastern Europe*, Oxford UP, Oxford. Published online (Oxford Scholarship online): https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198844372.001.0001/oso-9780198844372-chapter-1 (as of 07.04.2021).
+
++ 
+
+
+
+
+
+
+
+

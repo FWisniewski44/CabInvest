@@ -103,7 +103,7 @@ Da jedoch im ERDDA-Datensatz, wie zu erwarten war, nicht die von Cheibub et al. 
 
 Um die nötigen Informationen zu beinhalten, wurde sich hier als Quelle vor allem auf den Sammelband *Parliaments and Government Formation. Unpacking Investiture Rules* gestützt, welcher ebenfalls von Bjørn Erik Rasch, Shane Martin und José Antonio Cheibub im Jahr 2015 herausgegeben wurde. Darin finden sich Fallstudien zu 16 Staaten. Von diesen 16 Fallstudien musste jene zu Indien aufgrund von Nicht-Existenz im ERDDA-Datensatz ausgeschlossen werden. Für alle anderen Staaten wurden die Informationen aus den Fallstudien anhand eines selbst erstellten Codierschemas in den ERDDA-Datensatz integriert, um für diese Arbeit nutzbar gemacht zu werden.
 
-Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informationen zu 29 Staaten hinterlegt sind, wurden für die restlichen Staaten weitere Aufsätze zum Thema, sowie teilweise sofern notwendig die Verfassungen dieser Staaten, herangezogen, um die Informationen möglichst flächendeckend integrieren und nutzen zu können. Der [Appendix](https://github.com/FWisniewski44/CabInvest) dieser Arbeit enthält neben Informationen zum Codierschema in Form eines eigenen Codebooks für die sechs neu hinzugefügten Variablen auch etwaige Klarstellungen, auf welcher Basis diese Codierungen vorgenommen worden sind.
+Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informationen zu 29 Staaten hinterlegt sind, wurden für die restlichen Staaten weitere Aufsätze zum Thema, sowie teilweise sofern notwendig die Verfassungen dieser Staaten, herangezogen, um die Informationen möglichst flächendeckend integrieren und nutzen zu können. Der Appendix dieser Arbeit enthält neben Informationen zum Codierschema in Form eines eigenen Codebooks für die sechs neu hinzugefügten Variablen auch etwaige Klarstellungen, auf welcher Basis diese Codierungen vorgenommen worden sind.
 
 
 
@@ -113,9 +113,17 @@ Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informa
 # Ergebnisse der Analyse, Fazit, Schluss?
 
 
+
+# Appendix
+
+Für vorliegende Arbeit lässt sich ein Online-Appendix abrufen. Dieser enthält, wie bereits angesprochen, das Codebook für etwaige im Zuge dieser Arbeit neu erstellte Variablen, sowie Notizen des Autors zu den Gründen für die Codierung. Ebenfalls lässt sich dort der Code für die Analyse zur Replikation finden. Erreicht werden kann dieser Appendix durch [diesen Link](https://github.com/FWisniewski44/CabInvest/tree/main).
+
+
 # Literaturverzeichnis
 
 + Cheibub, José Antonio; Martin, Shane; Rasch, Bjørn Erik (2019): *Investiture rules and formation of minority governments in European parliamentary democracies*, Party Politics, 27:2 (2021), S. 351-362.
+
++ Cheibub, José Antonio; Martin, Shane; Rasch, Bjørn Erik (2013): *The Investiture Vote and the Formation of Minority Parliamentary Governments*, Draft for ECPR Conference, Bordeaux 2013.
 
 + Rasch, Bjørn Erik; Martin, Shane; Cheibub, José Antonio (2015, Hrsg.): *Parliaments and Government Formation. Unpacking Investiture Rules*, Oxford University Press, Oxford. Abgerufen online unter: https://oxford.universitypressscholarship.com/view/10.1093/acprof:oso/9780198747017.001.0001/acprof-9780198747017-chapter-1 (Stand: 02.04.2021).
 

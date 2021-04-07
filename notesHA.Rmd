@@ -435,10 +435,11 @@ See [Bulgarian Constitution, Art. 99](https://www.wipo.int/edocs/lexdocs/laws/en
 See [Constitution of Estonia, §89](https://www.president.ee/en/republic-of-estonia/the-constitution/). Also, see [Cheibub et al. (2013), p. 14](https://ecpr.eu/Filestore/paperproposal/ba2bdffd-a910-4bae-9c05-bb832db684a5.pdf).
 
 **Latvia**
-See [Constitution of Latvia](https://likumi.lv/ta/en/id/57980-the-constitution-of-the-republic-of-latvia). Also, see [ParlGov Database Documentation, Döring and Manow (2021)](http://www.parlgov.org/documentation/country/).
+See [Constitution of Latvia](https://likumi.lv/ta/en/id/57980-the-constitution-of-the-republic-of-latvia). 
 
 **Lithuania**
-
+See [Constitution of Lithuania]()
+Also, see [ParlGov Database Documentation, Döring and Manow (2021)](http://www.parlgov.org/documentation/country/).
 
 **Malta**
 

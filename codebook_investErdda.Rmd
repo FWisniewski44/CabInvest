@@ -1,54 +1,88 @@
 ---
 title: "Codebook: Datensatz 'investERDDA'"
 subtitle: "Erweiterung des ERDDA durch Daten zum Investitur-Prozess nach Cheibub et al. (2019)"
-abstract: "Dieser Datei ist das Codierschema für den Datensatz 'investERDDA' (Wisniewski 2021) zu entnehmen. Die sechs am Ende angefügten Variablen fußen theoretisch auf der Grundlage der von Cheibub et al. (2019) herausgearbeiteten sechs Ebenen von Investiturvoten. Informationen wurden aus Rasch et al. (2015), sowie aus den Aufsätzen gewonnen, welche am Ende dieses Codebooks im Literaturverzeichnis aufgeführt werden."
-author: "Florian Wisniewski"
 date: "`r Sys.Date()`"
 output:
-  pdf_document:
+  word_document:
+    reference_docx: "/Users/flo/Desktop/investiture/notes_cabInvest.docx"
     number_sections: TRUE
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# Vorbemerkungen (falls nötig)
 
-# Vorbemerkungen
-
-
+Dieser Datei ist das Codierschema für den Datensatz 'investERDDA' (Wisniewski 2021) zu entnehmen. Grundlage dessen bildet der Datensatz des ERDDA (Andersson, Bergman, Ersson 2014). Die sechs am Ende angefügten Variablen fußen theoretisch auf der Grundlage der von Cheibub et al. (2019) herausgearbeiteten sechs Ebenen von Investiturvoten.  Weiterführende Informationen zu den genauen Gründen für die Codierung der aufgeführten Variablen für die jeweiligen Länder lassen sich den beigefügten Notizen entnehmen (englischsprachig; Dateiname: "notes_cabInvest", Dokumenttitel: "Research Notes: Investiture Rules. Subcategories according to Cheibub, Martin and Rasch (2019)". Beiden Dateien liegen im Anhang auch genaue Angaben über die Informationsquellen bei, welche zur Generierung des Datensatzes verwendet wurden. Bei der verwendeten Literatur handelt es sich meist um Fallstudien zu einzelnen Ländern, in einzelnen Fällen wurden ebenfalls die Verfassungen bestimmter Staaten als Quellen einbezogen.
 
 # invest_timing
 
++ *Label*:
+  + Timing des Investiturvotums.
 
++ *Coding*:
+  + 0 = ex post
+  + 1 = ex ante
 
 # invest_rightToNominate
 
++ *Label*:
+  + Wer nominiert den zum Investiturvotum gestellten Premierminister?
 
++ *Coding*:
+  + 0 = Parlament
+  + 1 = Staatsoberhaupt
 
 # invest_whoVotes
 
++ *Label*:
+  + Wer stimmt beim Investiturvotum ab?
 
++ *Coding*:
+  + 0 = mehr als eine Kammer (meist Zwei-Kammern-Systeme)
+  + 1 = eine Kammer
+    + Hierunter fallen sowohl solche Systeme, bei denen nur eine von zwei Kammern abstimmt als auch jene Systeme, in denen es nur eine Kammer gibt.
 
 # invest_voteTarget
 
++ *Label*:
+  + Über was entscheidet das Investiturvotum?
 
++ *Coding*:
+  + 1 = Nur Premierminister
+  + 2 = Kabinett als Ganzes
+  + 3 = Regierungsprogramm
+  + 4 = Kombination von mehreren Ebenen zwischen 1 und 3
 
 # invest_failure
 
++ *Label*:
+  + Was passiert im Falle eines nicht bestandenen Investiturvotums?
 
++ *Coding*:
+  + 0 = Neue Investiturrunde
+    + Hierunter fallen sowohl neue Abstimmungen mit *anderer Mehrheitsregelung* als auch Abstimmungen über einen *neuen Kabinettsformateur*.
+  + 1 = Direkte Neuwahlen
 
 # invest_decisionRule
 
++ *Label*:
+  + Mehrheitsregelung bei der Investiturabstimmung (entspricht weitgehend der Definition von Bergman 1993).
 
++ *Coding*:
+  + 0 = Negative Mehrheit
+    + "Negative Mehrheit" umfasst alle Mehrheitsregelungen im Investiturvotum, bei denen sich eine Mehrheit *gegen* die Investitur einer zur Wahl stehenden Regierung aussprechen müsste.
+  + 1 = Positive Mehrheit
+    + Hierunter fallen sowohl solche Abstimmungen unter *absoluter Mehrheit* als auch jene unter *relativer Mehrheit*.
 
 # Literaturangaben
 
 + Cheibub, José Antonio; Martin, Shane; Rasch, Bjørn Erik (2019): *Investiture rules and formation of minority governments in European parliamentary democracies*, Party Politics, 27:2 (2021), S. 351-362.
 
++ Cheibub, José Antonio; Martin, Shane; Rasch, Bjørn Erik (2013): *The Investiture Vote and the Formation of Minority Parliamentary Governments*, Draft for ECPR Conference, Bordeaux 2013.
+
 + Rasch, Bjørn Erik; Martin, Shane; Cheibub, José Antonio (2015, Hrsg.): *Parliaments and Government Formation. Unpacking Investiture Rules*, Oxford University Press, Oxford. Abgerufen online unter: https://oxford.universitypressscholarship.com/view/10.1093/acprof:oso/9780198747017.001.0001/acprof-9780198747017-chapter-1 (Stand: 02.04.2021).
 
 + Döring, Herbert; Manow, Phillipp (2021): *ParlGov Database Documentation*, abgerufen unter: http://www.parlgov.org/documentation/country/ (Stand: 06.04.2021).
 
++ Bergman, Torbjørn; Ilonszki, Gabriella; Müller, Wolfgang (2019): *Coalition Governance in Central Eastern Europe*, Oxford UP, Oxford. Published online (Oxford Scholarship online): https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198844372.001.0001/oso-9780198844372-chapter-1 (as of 07.04.2021).
 
 
 

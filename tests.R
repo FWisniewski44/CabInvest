@@ -73,17 +73,14 @@ investErdda %>% rename("formDur" = "v600e", "post_election_cab" = "v303e",
 
 freq(erdda$v600e)
 
-firstEst <- coxph(data = investErdda, Surv(time = investErdda$v600e) ~ invest_timing + invest_rightToNominate + invest_whoVotes + 
-                    invest_voteTarget + invest_failure + invest_decisionRule)
+firstEst <- coxph(data = investErdda, Surv(time = investErdda$v600e) ~ invest_timing + invest_whoVotes + 
+                    invest_failure + invest_decisionRule)
 
-Surv(time = investErdda$v600e)
 # "event"	in Surv:
 # The status indicator, normally 0=alive, 1=dead. Other choices are TRUE/FALSE (TRUE = death) or 1/2 (2=death).
 # For interval censored data, the status indicator is 0=right censored, 1=event at time, 2=left censored, 3=interval censored.
 # For multiple endpoint data the event variable will be a factor, whose first level is treated as censoring.
 # Although unusual, the event indicator can be omitted, in which case all subjects are assumed to have an event.
-
-
 
 summary(firstEst)
 
