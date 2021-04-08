@@ -63,7 +63,7 @@ library(ggpubr)
 erdda <- read_dta(file = "/Users/flo/Desktop/data/erdda/erdda_b-version-stata12.dta")
 
 # load own modified erdda
-investErdda <- read_xls(path = "/Users/flo/Desktop/data/erdda/erdda_modified_invest.xls")
+investErdda <- read_xls(path = "/Users/flo/Documents/GitHub/CabInvest/investERDDA.xls")
 
 ```
 
@@ -81,37 +81,144 @@ Doch gerade bei dieser Variable handelt es sich um einen besonderen Fall. Wie Ch
 
 # Theoretischer Hintergrund
 
-+ Aufbau meiner Überlegungen auf Cheibub/Martin/Rasch (2019) und den Oxford-Sammelband, herausgegeben von Rasch/Martin/Cheibub (2015), mit den jeweiligen Länderstudien
+<!-- + Aufbau meiner Überlegungen auf Cheibub/Martin/Rasch (2019) und den Oxford-Sammelband, herausgegeben von Rasch/Martin/Cheibub (2015), mit den jeweiligen Länderstudien -->
 
-+ Orientierung an den Modellen von Diermeier/van Roozendaal (1998) und Golder (2010) zur Bargaining Duration
+<!-- + Orientierung an den Modellen von Diermeier/van Roozendaal (1998) und Golder (2010) zur Bargaining Duration -->
+
+Um zunächst einen Rahmen für die Arbeit zu schaffen, in welche sie sich bezüglich des theoretischen Hintergrundes bewegen soll, wird nun auf jene eingegangen. Dieser Teil soll sich in drei Unterkapitel gliedern: zunächst wird, erstens, auf die von Cheibub, Rasch und Martin herausgearbeiteten sechs Subkategorien für die Betrachtung des Investiturvotums eingegangen werden, um diese genauer zu erläutern. Zweitens wird kurz auf den bisherigen Stand zur Erforschung der Auswirkung bestimmter Faktoren auf die Dauer von Regierungsbildung im Allgemeinen eingegangen werden. Und schließlich soll, drittens, nochmals abschließend zusammengefasst erläutert werden, warum vorliegende Arbeit es für sinnvoll und wichtig erachtet, den bisherigen Forschungsstand noch um diese Thematik zu erweitern.
+
+## Zu den Investiturebenen
+<!--
++ Ursprungsarbeit: Bergman 1993 - "es gibt positiven und es gibt negativen Parlamentarismus beim Investiturvotum"
+
++ Cheibub et al. 2019: Bergman war zwar wertvoll als Beitrag, aber es ist Zeit das ganze etwas komplexer zu sehen (was es ja auch ist...), als nur auf die Art der Mehrheitsregel zu beziehen
+  + Die haben das aber bisher meist nur auf Minderheitsregierungen bezogen
+-->
+
+Als erstes nun also zur genaueren Erläuterung des von José Antonio Cheibub, Bjørn Erik Rasch und Shane Martin bezüglich des Investiturvotums. Vorliegende Arbeit stützt sich hierbei vor allem auf jene Ausführungen, die von den Autoren im von ihnen herausgegebenen Sammelband von 2015 (*Parliaments and Government Formation. Unpacking Investiture Rules*) und nochmals in einem Paper bezüglich der Formation von Minderheitsregierungen von 2019 (*Investiture rules and formation of minority governments in European parliamentary democracies*) dargelegt wurden.
+
+"Regierungen kommen aus dem Parlament" - das heißt für die Autoren im angesprochenen Sammelband von 2015 nicht nur, dass diese dem Parlament rechenschaftspflichtig sind und das auch bleiben oder dass sich die Zusammensetzung der Regierung auch aus der Sitzverteilung im Parlament ergibt. Vielmehr zielen sie auf die Untersuchung von **formaler** Beteiligung des Parlaments an der Regierungsbildung ab - und deren wohl sichtbarster Ausdruck ist das Investiturvotum (vgl. Rasch et al. 2015, S. 3).
+Dabei richten sie sich definitorisch gesehen bezüglich des Prozesses der Investitur nach Laver und Schofield, welche konstatieren, dass eine gewählte Regierung oftmals demonstrieren müsse, dass sie von Seiten des Parlamentes unterstützt wird. Dies geschehe eben durch diese formale Abstimmung (vgl. Laver/Schofield 1998, S. 62). Doch diesbezüglich äußern Rasch et al. auch direkt Bedenken: so sei es nicht länderübergreifend einheitlich geregelt, ob eine Regierung zum Abstimmungszeitpunkt bereits ihre volle Beschlussfähigkeit ausübe. Darüber hinaus sei es dann ebenso wenig einheitlich, was als *parlamentarische* Investitur gelten könne, also was überhaupt "das Parlament" umfasst, in welchem die Abstimmung durchgeführt wird. Weiterhin gäbe es ebenso auch Fälle, in denen kein Votum stattfindet, wie beispielsweise in Norwegen der Fall (vgl. Rasch et al. 2015, S. 3-4).
+
+Wie daraus jedoch daraus schon deutlich wird, waren die Autoren mit der Erfassung dieser formalen Parlamentsbeteiligung an der Regierungsbildung durch das Investiturvotum nicht zufrieden. Doch wie war von Seiten der Forschung bisher damit umgegangen worden? Eine der in diesem Kontext wichtigsten Kontributionen stammt von Torbjörn Bergman, welcher zwischen *positivem* und *negativem Parlamentarismus* unterschied - eine anerkannte Definition, die die Forschung in der Folgezeit dominierte. Dabei bezeichnet ersteres Systeme, bei denen eine Regierung die aktive Unterstützung des Parlamentes braucht, i. e. bei einer Abstimmung explizit mit einer Mehrheit im Amt bestätigt werden muss. Negativer Parlamentarismus hingegen sei per definitionem der Umstand, nach dem die "Bringschuld" aktiv an das Parlament gegeben werde, welches durch das Aufbringen einer Mehrheit gegen die zur Abstimmung stehende Regierung deren Abwahl herbeiführen müsse (vgl. Bergman 1993, S. 57-59). Wie bereits angemerkt erwies sich diese Erklärung für die Forschung in der Folgezeit als sehr hartnäckig und wurde innerhalb von Analysen meist dann herangezogen, wenn das Investiturvotum untersucht werden sollte.
+Dass dies allein jedoch der Prozedur nicht immer gerecht werden kann, illustrieren die Autoren anschaulich am Beispiel des Vereinigten Königreichs. Zunächst weisen sie auf die Rolle des Queen's Speech als eine Form des Investiturvotums hin, da dies eine Abstimmung sei, die zeigen solle, ob eine Regierung Mehrheiten im Parlament generieren könnte. Daher spiele laut Rasch et al. das britische Unterhaus in jedem Fall eine formal aktive Rolle bei der Regierungsbildung, ein Nicht-Bestehen des Votums zum Queen's Speech könne für eine Regierung zum Rücktritt führen. Jedoch merken sie auch zurecht an, dass bisher von Seiten der Forschung für die Investitur in Großbritannien immer vermerkt worden sei, das Parlament spiele dort diese formal aktive Rolle nicht (vgl. Rasch et al. 2015, S. 8-9). Sie konstatieren also: 
+
+>"Yet, as we argue, simply differentiating between positive and negative parliamentarism only scratches the surface of how parliaments around the world involve themselves formally in the process of making governments. The variation in rules is so great that studying the role of parliament in government formation solely through the lenses of negative versus positive parliamentarism is neither sufficiently detailed nor particularly rewarding - either theoretically or empirically." (Rasch et al. 2015, S. 5)
+
+Im Sammelband von 2015 legen die Autoren nachfolgend ebenso kurze Erklärungen und Abrisse dessen dar, was sie für eine fruchtbarere Bearbeitung des Investiturvotums halten, nämlich eine Hinwendung zur Multiperspektivität mittels einer Untergliederung des Investiturvotums in sechs Dimensionen. Diese wollen sie anhand von Fallstudien für insgesamt 16 Staaten, welche von jeweiligen Länderexperten durchgeführt wurden, einzeln unter anderem deskriptiv betrachten. Um einen kurzen Überblick über die angesprochenen Dimensionen, welche auch vorliegende Arbeit für die Analyse verwenden wird, zu erhalten, soll nun in aller Kürze auf diese eingegangen werden. Sie gliedern sich wie folgt:
+
++ **Timing des Investiturvotums**
+  + Hierbei handelt es sich um die bereits angesprochene Thematik, ob eine Regierung zum Abstimmungszeitpunkt bereits ihre volle Beschlussfähigkeit hat und schon formal eingesetzt ist(*ex post*-Investitur), oder ob das Parlament vor der eigentlichen Einsetzung abstimmt (*ex ante*-Investitur)
+
++ **Anzahl möglicher Abstimmungsrunden**
+  + In dieser Dimension wird die Anzahl möglicher Abstimmungsrunden erfasst, die durchlaufen werden können, bevor das Investiturvotum endgültig als gescheitert angesehen werden kann.
+
++ **Abstimmungsrecht beim Investiturvotum**
+  + Die Dimension des Abstimmungsrechts legt fest, welche parlamentarischen Organe an der Investiturabstimmung beteiligt sind. Dies umfasst in Ein-Kammern-Systemen logischerweise nur eine Kammer, jedoch ist in Zwei-Kammern-Systemen meist ebenfalls nur eine Kammer stimmberechtigt.
+
++ **Ziel der Abstimmung beim Investiturvotum**
+  + Dies umfasst, über wen oder was das Investiturvotum abstimmt: es kann sich dabei neben dem/der PremierministerIn auch um das Kabinett als ganzes, oder aber auch ein vorgeschlagenes Regierungsprogramm handeln. Ebenso ist eine Kombination dieser Ziele möglich.
+
++ **Vorgehen bei Fehlschlag des Investiturvotums**
+  + Das Vorgehen bei Fehlschlag eines Investiturvotums kann vielerlei Gestalt annehmen.
+
++ **Mehrheitsregelung beim Investiturvotum**
+
++ **Nominierungsrecht für das Investiturvotum**
+  + Das Nominierungsrecht bestimmt, von wem die für das Parlament zur Wahl stehenden Kandidaten bestimmt werden: entweder durch den Präsidenten/die Präsidentin, oder aber auch durch das Parlament selbst.
+
+Zu diesen Erklärungen ist anzumerken, dass der Sammelband von 2015 die ersten sechs Dimensionen umfasst (vgl. Rasch et al. 2015, S. 16-19) - jedoch wurde im Paper von 2019 die **Anzahl möglicher Abstimmungsrunden** durch das **Nominierungsrecht** ausgetauscht (vgl. Cheibub et al. 2019, S. 353). Vorliegende Arbeit wird, auch aufgrund von zu befürchtendem Datenverlust, die sechs Dimensionen nach Cheibub et al. (2019) zur Anwendung bringen.
+
+## Zum bisherigen Forschungsstand bezüglich der Dauer von Regierungsbildung
+<!--
++ Diermeier und v. Roozendaal 1998: Pioniere, was haben die gemacht? Vllt. Rückbezug auf Merlo 1997
+
++ Ecker und Meyer 2015: bisherige stiefmütterliche Behandlung des Themas der Dauer von Regierungsbildung - es wurde viel zu Regierungsbeendigung gemacht und auch viel zur Formation von Regierung an sich, aber eher weniger zur Modellierung der wirklichen DAUER dieser Formierung
+
++ Golder 2010 als neueres Beispiel
+
++ Vllt. kann auch auf die Variablen dieser verschiedenen Untersuchungen eingegangen werden: welche haben sich verändert? Oder wurden die gleichen angeschaut?
+-->
+
+
+
+## Warum ist eine solche Untersuchung relevant?
+
+<!--
++ Der Meinung von Cheibub et al. wird beigepflichtet: Bergmans Beitrag an sich hat eine Variable eröffnet, die bisher in zahlreichen Untersuchungen mit Wissensgewinn verbunden eingesetzt wurde
+
++ Jedoch wird auch beigepflichtet, dass für die genauere Betrachtung von Investiturregeln die reine Reduzierung dieser auf die Mehrheitsregelung nicht genug
+
++ Auch muss angemerkt sein: bisher wurden die sechs Ebenen nur für Minderheitsregierungen gecheckt - das gehört geändert, man muss das für alle checken
+-->
+
+Den Ausführungen aus 2.1 zu den theoretischen Überlegungen, das Investiturvotum über die sechs Dimensionen eingehender zu erfassen, als rein über den Bergman'schen positiven oder negativen Parlamentarismus, pflichtet diese Arbeit bei. Auf diese Weise bietet sich eine gute Möglichkeit, die formale Rolle von Parlamenten im Regierungsbildungsprozess noch genauer zu beleuchten. Dies soll keinesfalls bedeuten, dass die Grundlagenarbeit Bergmans in irgendeiner denkbaren Weise nicht gewürdigt werde - vielmehr sieht vorliegende Arbeit in den Ergebnissen der drei Autoren eine Art inkrementelle Innovation zur sinnvollen Erweiterung des Grundgedankens.
+
+Doch muss auch angemerkt werden, dass die Autoren bezüglich des eigenen Forschungsinteresses ausschließlich Minderheitsregierungen und die Auswirkungen der einzelnen Investitur-Dimensionen auf die Formation dieser untersuchen wollten, wie sowohl aus dem einführenden Kapitel in den Sammelband von 2015 als auch im Paper von 2019 deutlich wird. Aus diesem Grund hat es sich vorliegende Arbeit zum Ziel gesetzt, diesen Filter beiseite zu schieben und den Blick erneut zu weiten, weshalb nun dieses Schema auch im breiteren Kontext betrachtet werden soll, ohne zwischen Minderheits- oder Mehrheitsregierung zu unterscheiden. Zusätzlich wird nicht die gebildete Regierungsform im Fokus stehen, sondern, wie bereits angedeutet, die Dauer der jeweiligen Regierungsbildungen.
+
+Damit befindet sich die Arbeit in der gleichen Stoßrichtung, wie die in 2.2 beschriebenen Arbeiten von sowohl Diermeier und van Roozendaal (1998) als auch Golder (2010), jedoch ist ihre Zielsetzung auch jene, gesonderte Aussagen über die einzelnen Invesitur-Dimensionen treffen zu können. Dazu werden im Analyse-Bereich der Arbeit sowohl das Modell von Diermeier und van Roozendaal als auch das Modell Golders weitgehend repliziert, jedoch unter Einbezug der neuen Variablen, um eventuelle Veränderungen am Ergebnis im Vergleich zu den Originalen berichten zu können. Es sei jedoch auch der Vollständigkeit halber darauf hingewiesen, dass eine vollkommene Vergleichbarkeit nicht komplett hergestellt werden kann - dies ist sowohl der unterschiedlichen Datengrundlage, als auch dem zeitlichen Abstand zu den bereits älteren Modellen geschuldet. Somit kann diese Arbeit ebenso gut auch als explorativer Schritt in eine neue Forschungsrichtung gesehen werden.
 
 # Methodik
 
-+ ereignisanalytisches Vorgehen über Cox PH-Modelle, da Modellierung des Einflusses über Zeit
+Als grundlegende Methodik greift vorliegende Arbeit jene der beiden auch im Theorieteil angesprochenen Arbeiten von Diermeier und van Roozendaal (1998), sowie von Golder (2010) auf. Es werden als auch Cox Proportional Hazards-Modelle (fortan auch Cox PH-Modelle) verwendet, um die Verhandlungsdauer über die Zeit (in Tagen) zu modellieren.
 
-+ dabei: semi-parametrische Modelle - Modellvoraussetzungen, dass die PH-Assumption von nicht proportional verteilten Einflüssen über Zeit getroffen ist
+Bei der Verwendung dieser gilt es jedoch zu beachten, dass kein "terminal event" benötigt wird, wie beispielsweise bei einer Untersuchung zur Stabilität von gebildeten Regierungen und deren Scheiterrisiko durch beispielsweise vorgezogene Neuwahlen der Fall. Die theoretische Überlegung zum Modell in vorliegendem Fall lautet wie folgt: da im Datensatz nur Regierungen enthalten sind, die **ohnehin** gebildet wurden, "entfällt" sozusagen der "terminal event", welcher in vorliegendem Fall die Regierungen beinhaltet hätte, die eine Möglichkeit zur Bildung gehabt haben könnten.
+Bezüglich der abhängigen Variable der *Dauer der Regierungsbildung* hält sich diese Analyse an die gängige Praxis: diese Phase wird in Tagen gemessen, beginnt entweder mit den Wahlen bzw. dem Rücktritt der alten Regierung und endet dann mit der Einsetzung der neuen Regierung (vgl. Golder 2010, S. 18). Im Datensatz, der für diese Arbeit zugrundeliegt und welcher in Punkt 4 aber auch nochmals genauer erläutert werden wird, entspricht diese Dauer in Tagen der Variable *formDur*.
+
+Ebenfalls gilt es bei der Nutzung von Cox PH-Modellen darauf zu achten, dass die Modellvoraussetzungen eingehalten werden. Deswegen werden bei allen gerechneten Modellen die Schoenfeld-Residuen berechnet, um Aussagen über die (Nicht-)Einhaltung der Proportional Hazards Assumption (fortan auch PH Assumption) machen zu können. Diese muss eingehalten werden, um zu gewährleisten, dass die Verteilung der Variablen, deren Einfluss über die Zeit hinweg untersucht werden soll, nicht konstant ist - also sprich, dass kein signifikanter Zusammenhang besagter Schoenfeld-Residuen mit der verstrichenen Zeit vorliegt. Variablen im Modell, die diese Modellvoraussetzung verletzen, werden ausgeschlossen. Ebenso wird mittels einer einfachen Korrelationsmatrix auf die Korrelation der Variablen untereinander getestet, welche im Modell beinhaltet werden sollen.
+
+Die Interpretation der Koeffizienten, welche durch die gerechneten Modell erhalten werden, erfolgt ebenfalls analog zu Golder: Bei den errechneten Koeffizienten handelt es sich um sogenannte proportionale Hazard-Schätzungen. Jene Koeffizienten mit positivem Vorzeichen drücken dabei eine Erhöhung der *hazard rate* aus, was gleichbedeutend mit einer schnelleren Regierungsbildung (also einem schnelleren Eintreten des Ereignisses "Regierungsbildung") ist. Dem gegenüber drücken jene Koeffizienten mit einem positiven Vorzeichen eine langsamere Regierungsbildung aus: die *hazard rate* wird verringert und daher tritt das Ereignis "Regierunsbildung" weniger schnell ein (vgl. Golder 2010, S. 22).
 
 # Daten: ERDDA, aber selbst modifiziert
+
+## ERDDA 2014
 
 Nun soll kurz auf die Daten eingegangen werden, welche dieser Arbeit zugrundeliegen. Hierbei wurde zunächst der in der Forschung bereits bekannte ERDDA-Datensatz von Andersson, Bergman und Ersson (2014) als Ausgangspunkt verwendet. Dieser beinhaltet Informationen für 29 europäische Staaten zu deren politischen Systemen. Dabei gliedert er sich thematisch in die Bereiche "Struktur", "Präferenzen", "Institutionen", "Verhandlungsumgebung" und "Kritische Events". Darüber hinaus enthält er ebenfalls räumliche und zeitliche Angaben zu den Staaten und Angaben über die geformten Kabinette. Zeitlich umfasst er Daten zu europäischen Kabinette von der unmittelbaren Nachkriegszeit bis 2010.
 
 Für vorliegende Arbeit zur Untersuchung der Dauer von Regierungsbildung sind gerade die Bereiche "Institutionen" und "Verhandlungsumgebung" von größerer Bedeutung. Außerdem findet sich die Zeitvariable, welche im für die ereignisanalytischen Cox-Modelle nötig ist, im Datensatz wieder (*formDur*).
 
-## Codierung der Daten zu den Investitur-Ebenen nach Cheibub et al. (2019)
+## Codierung der neuen Daten zu den Investitur-Ebenen nach Cheibub et al. (2019)
 
 Da jedoch im ERDDA-Datensatz, wie zu erwarten war, nicht die von Cheibub et al. (2019) herausgearbeiteten sechs Ebenen des Investitur-Prozesses enthalten waren, wurden diese vom Autor selbst codiert und an den Datensatz angefügt.
 
 Um die nötigen Informationen zu beinhalten, wurde sich hier als Quelle vor allem auf den Sammelband *Parliaments and Government Formation. Unpacking Investiture Rules* gestützt, welcher ebenfalls von Bjørn Erik Rasch, Shane Martin und José Antonio Cheibub im Jahr 2015 herausgegeben wurde. Darin finden sich Fallstudien zu 16 Staaten. Von diesen 16 Fallstudien musste jene zu Indien aufgrund von Nicht-Existenz im ERDDA-Datensatz ausgeschlossen werden. Für alle anderen Staaten wurden die Informationen aus den Fallstudien anhand eines selbst erstellten Codierschemas in den ERDDA-Datensatz integriert, um für diese Arbeit nutzbar gemacht zu werden.
 
-Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informationen zu 29 Staaten hinterlegt sind, wurden für die restlichen Staaten weitere Aufsätze zum Thema, sowie teilweise sofern notwendig die Verfassungen dieser Staaten, herangezogen, um die Informationen möglichst flächendeckend integrieren und nutzen zu können. Der Appendix dieser Arbeit enthält neben Informationen zum Codierschema in Form eines eigenen Codebooks für die sechs neu hinzugefügten Variablen auch etwaige Klarstellungen, auf welcher Basis diese Codierungen vorgenommen worden sind.
-
-
+Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informationen zu 29 Staaten hinterlegt sind, wurden für die restlichen Staaten weitere Aufsätze zum Thema, sowie teilweise und sofern notwendig die Verfassungen dieser Staaten, herangezogen, um die Informationen möglichst flächendeckend integrieren und nutzen zu können. Der Appendix dieser Arbeit enthält neben Informationen zum Codierschema in Form eines eigenen Codebooks für die sechs neu hinzugefügten Variablen auch etwaige Klarstellungen, auf welcher Basis diese Codierungen vorgenommen worden sind. Auf diese Weise wurden 353 Fälle von Regierungen aus *hier noch Anzahl einfügen* Ländern erarbeitet, für die alle Angaben eingefügt werden konnten.
 
 # Analyse der Daten: Bargaining Duration vs. 6 Investitur-Dimensionen + Kontrollen
 
+## Modell Diermeier/van Roozendaal 1998 und Modell Golder 2010
 
-# Ergebnisse der Analyse, Fazit, Schluss?
+<!--
++ Es ist klar, dass keine volle Vergleichbarkeit herrschen kann, da zu anderen Zeitpunkten mit anderen Datensätzen gemachte Untersuchungen vorliegen
 
++ Genau darzulegen: welche Variablen werden als Kontrollen beinhaltet? (vgl. so, wie das auch Diermeier/v. Roozendaal und Golder gemacht haben)
+-->
+
+
+```{r model 1: diermeier-v.Roozendaal 1998, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+```
+
+
+```{r model 2: golder 2010, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+```
+
+
+## Eigenes best fit-Modell aus 1998 und 2010 (kombiniert)
+
+
+
+# Ergebnisse der Analyse, Fazit, Schluss, Ausblick
+
+<!--
++ Anschließend an Ecker/Meyer 2015: man könnte die gleiche Untersuchung mit dem vorliegenden Datensatz nochmals machen, jedoch gegliedert nach (Mittel-)Ost- und Westeuropa
+
++ Zum Datensatz selbst: weitere Ergänzungen zum Codierschema wären hilfreich, um auch Staaten wie Frankreich oder die Niederlande genauer zu erfassen, welche eher semi-verbriefte Investitur-Regelungen haben
+
++ 
+-->
 
 
 # Appendix
@@ -133,7 +240,9 @@ Für vorliegende Arbeit lässt sich ein Online-Appendix abrufen. Dieser enthält
 
 + Diermeier, Dennis; van Roozendaal, Peter (1998): *The Duration of Government Formation Processes in Western Multi-Party Democracies*, British Journal of Political Science, 28:4, S. 609-626.
 
++ Laver, Michael; Schofield, Norman (1998): *Multiparty Government: The Politics of Coalition in Europe*, The University of Michigan Press, Michigan.
 
++ Bergman, Torbjörn (1993): *Formation rules and minority governments*, European Journal of Political Research, Vol. 23, S. 55-66.
 
 
 

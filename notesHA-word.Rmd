@@ -42,7 +42,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## IRELAND
 
-+ In case the Taoiseach is not approved, there is no real rule as to what has to be done
++ In case the Taoiseach is not approved, there is no real rule as to what has to be done (as voting just continues)
 
 ## SPAIN
 
@@ -314,7 +314,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## ITALY
 
-+ no clear procedure: looking at Draghi cabinet being sworn in in Feb. '21 - possibilities for new elections, but also for negotiations with current government (therefor coded as NA)
++ no clear procedure: looking at Draghi cabinet being sworn in in Feb. '21, also Conte I and II before - possibilities for new elections, but also for negotiations with current government (therefore coded as 0)
 
 ## SPAIN
 
@@ -401,7 +401,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 **Finland**
 
-For the *Finnish* case, see Paloheimo (2003) and the Finnish constitution. Information is coded from 1991 onwards, as there were a few amendments made concerning investiture and the role of the PM.
+For the Finnish case, see Paloheimo (2003) and the [Finnish Constitution, Section 61](https://finlex.fi/en/laki/kaannokset/1999/en19990731.pdf). Information is coded from 1991 onwards, as there were a few amendments made concerning investiture and the role of the PM, so that before this, there is no secure information.
 
 **Denmark**
 

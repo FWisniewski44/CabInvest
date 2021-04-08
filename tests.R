@@ -55,7 +55,7 @@ Surv(time = investErdda$v600e, time2 = lead(investErdda$v600e))
 # renaming
 
 investErdda %>% rename("formDur" = "v600e", "post_election_cab" = "v303e",
-                       )
+                       "" = "")
 
 
 
@@ -83,8 +83,10 @@ firstEst <- coxph(data = investErdda, Surv(time = investErdda$v600e) ~ invest_ti
 # Although unusual, the event indicator can be omitted, in which case all subjects are assumed to have an event.
 
 summary(firstEst)
+cox.zph(firstEst)
 
-fre(investErdda$v008e)
+fre(investErdda$invest_decisionRule)
+
 
 
 
