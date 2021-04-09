@@ -42,32 +42,61 @@ library(ggpubr)
 
 erdda <- read_dta(file = "/Users/flo/Desktop/data/erdda/erdda_b-version-stata12.dta")
 
-investErdda <- read_xls(path = "/Users/flo/Desktop/data/erdda/erdda_modified_invest.xls")
+investErdda <- read_xls(path = "/Users/flo/Documents/GitHub/CabInvest/investERDDA.xls")
 
-pdda <- read_sav(file = "/Users/flo/Downloads/the Comparative Parliamentary Democracy Data Archive/the Comparative Parliamentary Democracy Data Archive.sav")
+# pdda <- read_sav(file = "/Users/flo/Downloads/the Comparative Parliamentary Democracy Data Archive/the Comparative Parliamentary Democracy Data Archive.sav")
 
-Surv(time = pdda$v167y, time2 = pdda$v167y2)
-Surv(time = pdda$v167y2)
+####
 
-Surv(time = investErdda$v600e, time2 = lead(investErdda$v600e))
+# renaming variables
+
+investErdda <- investErdda %>%
+  rename("formDur" = "v600e", "post_election" = "v303e", "country_name" = "v001e", "new_gov" = "v300e", 
+         "effec_parties_parl" = "v309e", "polarization" = "v407e", "largest_party_dist" = "v409e",
+         "majority_sit" = "v314e")
+
+freq(investErdda$new_gov)
+
+# generate factor (create individual levels) for the countries and change label names (for graphic used in paper)
+
+investErdda$country_name <- factor(investErdda$country_name, labels = c("Austria", "Belgium", "Denmark", "Finland", "France",
+                                            "Germany", "Greece", "Iceland", "Ireland", "Italy",
+                                            "Luxembourg", "Netherlands", "Norway", "Portugal", "Spain",
+                                            "Sweden", "UK", "Bulgaria", "Cyprus", "Czech Rep.",
+                                            "Estonia", "Hungary", "Latvia", "Lithuania", "Malta",
+                                            "Poland", "Romania", "Slovakia", "Slovenia"))
+
+save(investErdda, file = "investERDDA_paper2021.RData")
+
+####
+
+# creation of subset for analysis
+
+investSub <- subset(investErdda, select = c("formDur", "invest_timing", "invest_rightToNominate", "invest_whoVotes", 
+                                            "invest_voteTarget", "invest_failure", "invest_decisionRule", "invest_Rounds",
+                                            "post_election", "new_gov", "effec_parties_parl", "polarization",
+                                            "largest_party_dist", "majority_sit"))
+
+####
+
+# (re)creation diermeier/van roozendaal 1998
+
+corDier <- cor(na.omit(investSub))
+
+d3heatmap(corDier, Rowv = F, Colv = F)
+
+dierm_roozen <- coxph(data = investSub, Surv(time = formDur) ~ post_election + new_gov + invest_rightToNominate + invest_whoVotes +
+        invest_voteTarget + invest_failure + invest_decisionRule + effec_parties_parl + polarization)
+
+summary(dierm_roozen)
 
 
-# renaming
+# (re)creation golder 2010
 
-investErdda %>% rename("formDur" = "v600e", "post_election_cab" = "v303e",
-                       "" = "")
+golder <- coxph(data = investSub, Surv(time = formDur) ~ post_election + new_gov + invest_rightToNominate + invest_whoVotes +
+                  invest_voteTarget + invest_failure + invest_decisionRule + effec_parties_parl + polarization + majority_sit)
 
-
-
-
-
-
-
-
-
-
-
-
+summary(golder)
 
 
 

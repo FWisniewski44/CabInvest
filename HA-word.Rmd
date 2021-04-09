@@ -65,6 +65,23 @@ erdda <- read_dta(file = "/Users/flo/Desktop/data/erdda/erdda_b-version-stata12.
 # load own modified erdda
 investErdda <- read_xls(path = "/Users/flo/Documents/GitHub/CabInvest/investERDDA.xls")
 
+# renaming variables
+
+investErdda <- investErdda %>%
+  rename("formDur" = "v600e", "post_election" = "v303e", "country_name" = "v001e", "new_gov" = "v300e", 
+         "effec_parties_parl" = "v309e", "polarization" = "v407e", "largest_party_dist" = "v409e",
+         "majority_sit" = "v314e")
+
+# generate factor (create individual levels) for the countries and change label names (for graphic used in paper)
+
+investErdda$country_name <- factor(investErdda$country_name, labels = c("Austria", "Belgium", "Denmark", "Finland", "France",
+                                            "Germany", "Greece", "Iceland", "Ireland", "Italy",
+                                            "Luxembourg", "Netherlands", "Norway", "Portugal", "Spain",
+                                            "Sweden", "UK", "Bulgaria", "Cyprus", "Czech Rep.",
+                                            "Estonia", "Hungary", "Latvia", "Lithuania", "Malta",
+                                            "Poland", "Romania", "Slovakia", "Slovenia"))
+
+
 ```
 
 # Einleitung
@@ -108,26 +125,27 @@ Dass dies allein jedoch der Prozedur nicht immer gerecht werden kann, illustrier
 Im Sammelband von 2015 legen die Autoren nachfolgend ebenso kurze Erklärungen und Abrisse dessen dar, was sie für eine fruchtbarere Bearbeitung des Investiturvotums halten, nämlich eine Hinwendung zur Multiperspektivität mittels einer Untergliederung des Investiturvotums in sechs Dimensionen. Diese wollen sie anhand von Fallstudien für insgesamt 16 Staaten, welche von jeweiligen Länderexperten durchgeführt wurden, einzeln unter anderem deskriptiv betrachten. Um einen kurzen Überblick über die angesprochenen Dimensionen, welche auch vorliegende Arbeit für die Analyse verwenden wird, zu erhalten, soll nun in aller Kürze auf diese eingegangen werden. Sie gliedern sich wie folgt:
 
 + **Timing des Investiturvotums**
-  + Hierbei handelt es sich um die bereits angesprochene Thematik, ob eine Regierung zum Abstimmungszeitpunkt bereits ihre volle Beschlussfähigkeit hat und schon formal eingesetzt ist(*ex post*-Investitur), oder ob das Parlament vor der eigentlichen Einsetzung abstimmt (*ex ante*-Investitur)
+  + Hierbei handelt es sich um die bereits angesprochene Thematik, ob eine Regierung zum Abstimmungszeitpunkt bereits ihre volle Beschlussfähigkeit hat und schon formal eingesetzt ist(*ex post*-Investitur), oder ob das Parlament vor der eigentlichen Einsetzung abstimmt (*ex ante*-Investitur).
 
 + **Anzahl möglicher Abstimmungsrunden**
-  + In dieser Dimension wird die Anzahl möglicher Abstimmungsrunden erfasst, die durchlaufen werden können, bevor das Investiturvotum endgültig als gescheitert angesehen werden kann.
+  + In dieser Dimension wird die Anzahl möglicher Abstimmungsrunden erfasst, die durchlaufen werden können, bevor das Investiturvotum endgültig als gescheitert angesehen werden kann. Danach erfolgen Parlamentsauflösungen und Neuwahlen.
 
 + **Abstimmungsrecht beim Investiturvotum**
   + Die Dimension des Abstimmungsrechts legt fest, welche parlamentarischen Organe an der Investiturabstimmung beteiligt sind. Dies umfasst in Ein-Kammern-Systemen logischerweise nur eine Kammer, jedoch ist in Zwei-Kammern-Systemen meist ebenfalls nur eine Kammer stimmberechtigt.
 
 + **Ziel der Abstimmung beim Investiturvotum**
-  + Dies umfasst, über wen oder was das Investiturvotum abstimmt: es kann sich dabei neben dem/der PremierministerIn auch um das Kabinett als ganzes, oder aber auch ein vorgeschlagenes Regierungsprogramm handeln. Ebenso ist eine Kombination dieser Ziele möglich.
+  + Dies umfasst, über wen oder was beim Investiturvotum abgestimmt wird: es kann sich dabei neben dem/der PremierministerIn auch um das Kabinett als ganzes, oder aber auch ein vorgeschlagenes Regierungsprogramm handeln. Ebenso ist eine Kombination dieser Ziele möglich.
 
 + **Vorgehen bei Fehlschlag des Investiturvotums**
-  + Das Vorgehen bei Fehlschlag eines Investiturvotums kann vielerlei Gestalt annehmen.
+  + Das Vorgehen bei Fehlschlag eines Investiturvotums kann vielerlei Gestalt annehmen. So kann es beispielsweise zu einer Fortführung der Regierung unter einer geschäftsführenden Regierung kommen, oder aber auch zu einem erneuten Investiturwahlgang (meist unter anderen Bedingungen, wie veränderter Mehrheitsregel oder verändertem Ziel der Abstimmung, oder aber auch verändertem Nominierungsrecht). Auch kann es direkt zu einer Parlamentsauflösung mit Neuwahlen kommen. Aus technischen Aspekten heraus entschied diese Arbeit sich hier für eine Dichotomisierung (vgl. Appendix).
 
 + **Mehrheitsregelung beim Investiturvotum**
+  + Diese Dimension behandelt die Abstimmungs- oder auch Mehrheitsregel beim Investiturvotum. Hier kann beispielsweise zwischen absoluter und relativer Mehrheit unterschieden werden, es ist auch eine negative Mehrheitsregelung notwendig. Hier sind klare Parallelen zu Bergmans Ausgestaltung von positivem und negativem Parlamentarismus gegeben.
 
 + **Nominierungsrecht für das Investiturvotum**
-  + Das Nominierungsrecht bestimmt, von wem die für das Parlament zur Wahl stehenden Kandidaten bestimmt werden: entweder durch den Präsidenten/die Präsidentin, oder aber auch durch das Parlament selbst.
+  + Das Nominierungsrecht bestimmt, von wem die für das Parlament zur Wahl stehenden Kandidaten bestimmt werden: entweder durch den Präsidenten/die Präsidentin, oder aber durch das Parlament selbst.
 
-Zu diesen Erklärungen ist anzumerken, dass der Sammelband von 2015 die ersten sechs Dimensionen umfasst (vgl. Rasch et al. 2015, S. 16-19) - jedoch wurde im Paper von 2019 die **Anzahl möglicher Abstimmungsrunden** durch das **Nominierungsrecht** ausgetauscht (vgl. Cheibub et al. 2019, S. 353). Vorliegende Arbeit wird, auch aufgrund von zu befürchtendem Datenverlust, die sechs Dimensionen nach Cheibub et al. (2019) zur Anwendung bringen.
+Zu diesen Erklärungen ist anzumerken, dass der Sammelband von 2015 die ersten sechs Dimensionen umfasst (vgl. Rasch et al. 2015, S. 16-19) - jedoch wurde im Paper von 2019 die **Anzahl möglicher Abstimmungsrunden** durch das **Nominierungsrecht** ausgetauscht (vgl. Cheibub et al. 2019, S. 353). Vorliegende Arbeit wird, auch aufgrund von Datenverlust bei der Variable zu den möglichen Investiturrunden, da hierfür oftmals keine eindeutigen Angaben gemacht werden konnten, die sechs Dimensionen nach Cheibub et al. (2019) zur Anwendung bringen.
 
 ## Zum bisherigen Forschungsstand bezüglich der Dauer von Regierungsbildung
 <!--
@@ -140,6 +158,25 @@ Zu diesen Erklärungen ist anzumerken, dass der Sammelband von 2015 die ersten s
 + Vllt. kann auch auf die Variablen dieser verschiedenen Untersuchungen eingegangen werden: welche haben sich verändert? Oder wurden die gleichen angeschaut?
 -->
 
+Nachdem nun die von Rasch, Cheibub und Martin herausgearbeiten Ergebnisse präsentiert wurden und ein Verständnis dafür geschaffen wurde, warum die auf diese Weise vorgenommene Untergliederung des Investitur-Prozesses für die Forschung eine große Relevanz aufweist, soll nun im zweiten theoretischen Schritt in aller Kürze auf den Forschungsstand zum Thema der Dauer der Regierungsbildung geblickt werden.
+
+Hier ist zunächst zu konstatieren, dass es sich dabei um einen Bereich handelt, welcher bisher eher weniger stark beforscht wurde. Auf diesen Umstand einer eher "stiefmütterlichen" Betrachtung des Themas wurde auch bereits hingewiesen. Die Erforschung von gerade der **Dauer** des Regierungsbildungsprozesses steht hier etwas im Schatten des wesentlich stärker frequentierten Feldes der Forschung zur Regierungsbildung selbst und auch zu deren Beendigung (vgl. Ecker/Meyer 2015, S. 1).
+So wurde die Dauer des Prozesses innerhalb der beiden anderen Forschungsfelder bisher durchaus genutzt - jedoch immer als Explanans, nie als Explanandum. Beispielsweise zeigte Saalfeld in einer Pooled-Hazards-Analyse zur Regierungsdauer und dem vorzeitigen Scheitern von Koalitionen, dass eine längere Verhandlungsdauer zu einem geringeren Risiko von vorgezogenen Neuwahlen führen kann (vgl. Saalfeld 2008, S. 340-341; 360). Auch wurde von Strøm in einer Analyse gezeigt, dass  Ebenso wurde bereits untersucht, wie sich Faktoren wie die ideologische Nähe oder auch Präferenz-Schnittmengen auf einzelne, spezielle Versuche der Formation einer Regierung ausgewirkt haben (vgl. Ecker/Meyer 2017).
+Wird jedoch explizit die **Dauer in Tagen** als abhängige Variable erachtet und untersucht, so kann sich dem Befund von Ecker und Meyer angeschlossen werden. Es gibt jedoch trotz alledem Studien, welche sich einer derartige Untersuchung angenommen haben. Nachfolgend soll auf diese Analysen, deren Erwartungen zum Thema des Einflusses von Investitur-Prozessen auf die Dauer der Regierungsbildung, sowie vor allem auf deren gesamte Ergebnisse genauer eingegangen werden, da sich bezüglich der einzufügenden Kontrollvariablen für vorliegende Arbeit an diesen orientiert werden wird.
+
+Dabei ist zunächst als erstes die Studie von Diermeier und van Roozendaal (1998) zu nennen. Diese geht bezüglich des theoretischen Unterbaus von einem Ansatz der Verhandlungstheorie bzw. Spieltheorie unter unvollständigen Informationen aus (vgl. Diermeier/van Roozendaal 1998, S. 610-613). Wie bereits zuvor erwähnt, differenzieren auch die beiden Autoren hier zwischen der Untersuchung der Dauer eines Regierungsbildungsprozesses in Tagen und der Untersuchung von individuellen Formationsversuchen (vgl. Ebd., S. 615). Ebenso wurde hier der Faktor Investitur in der Analyse berücksichtigt Jedoch handelt es sich dabei lediglich um eine Variable nach der Definition durch Bergman, also eine Unterscheidung nach der Mehrheitsregelung. Bezüglich des erwarteten Effekts wird dabei herausgestellt, dass sie einen solchen nicht vermuten, da die Verhandler der jeweiligen Parteien bei der Regierungsbildung einen solchen in der Verfassung implementierten Faktor parlamentarischen Einflusses bereits im Vorhinein abschätzen könnten (vgl. Ebd., S. 621-622). Weitere beinhaltete Variablen waren sowohl aus der für ihre Studie grundlegenden theoretischen Perspektive hervorgegangen ("Status als Nachwahlkabinett" und "vorherige Niederlage") als auch institutionelle Kontrollvariablen ("Status als geschäftsführende Regierung", "Fortsetzungsregeln der vorigen Regierung", "Anzahl effektiver Parteien im Parlament", "Polarisierung", "Identifizierung möglicher Koalitionen vor der Wahl").
+Zum Abschluss kommen Diermeier und van Roozendaal auf die Ergebnisse ihrer Studie zu sprechen. Hierbei sehen sie ihren verhandlungs-/spieltheoretischen Ansatz zur Unsicherheit in der Verhandlungsumgebung unter unvollständigen Informationen als bestätigt an, da die Variablen aus diesem Bereich durchgehend die erwartete Signifikanz, auch in Kontrollmodellen mit anderen Variablen, aufwiesen. Weiterhin stellen sie fest, dass geschäftsführende Regierungen und jene mit einem Vorrecht der amtierenden Regierung zur Koalitionsformation kürzere Formationsdauern haben. Als letztes konstatieren sie noch, dass die Ergebnisse (verringerte Formationsdauer, signifikant) zur Identifizierungsvariable unerwartet waren, jedoch bei der Kontrolle für Ländereffekte verschwinden (vgl. Ebd, S. 625-626).
+Was diese Studie für vorliegene Arbeit relevant macht, ist die Tatsache, dass hier bereits der Faktor der Unsicherheit der Akteure und dessen verzögernde Wirkung auf die Dauer der Regierungsbildung angesprochen wird (vgl. Ebd., S. 612). Der Ansatz von unvollständigen Informationen und Unsicherheit im Verhandlungszeitraum wird als eine sinnvolle Interpretationsschablone erachtet, weshalb auch hier darauf zurückgegriffen werden wird.
+
+Eine weitere erwähnenswerte Studie ist die von Golder zu Verzögerungen im Verhandlungsprozess, welche zu einer längeren Dauer der Regierungsbildung führen können (2010). Hierin greift sie die Überlegungen von Diermeier und van Roozendaal zum Faktor Unsicherheit bei der Regierungsbildung auf. Dieser Faktor ist zwar auch für ihre Analyse zentral, jedoch konstatiert sie ebenfalls:
+
+> "The problem is that although Diermeier and van Roozendaal (1998) are correct to say that there is no uncertainty about the bargaining environment itself, for example, all actors know how many legislative parties there are, it seems reasonable to think that factors increasing the complexity of the bargaining environment would make it harder for the relevant party elites to elicit the information that they need to make a government proposal acceptable to a legislative majority." (Golder 2010, S. 10)
+
+Somit erweitert sie die bekannte Rahmenordnung der Unsicherheit noch um den Faktor von Komplexität. Auch Diermeier und van Roozendaal hatten zwar Variablen hierzu beinhaltet, jedoch nicht viel Erkenntnisgewinn von diesen erwartet. Golder hingegen konstatiert, eine größere legislative Fragmentierung (beispielsweise durch mehr effektive Parteien im Parlament) führe zu erhöhter Komplexität und damit einer längeren Regierungsbildung führen. Sie stellt jedoch auch heraus, dass in einer Verhandlungsumgebung *ohne* Unsicherheit auch keine Komplexität gegeben wäre - Vorschläge über Zusammenarbeit wären demnach einfach annehmbar. Golder stellt demnach die Hypothese auf, dass es eines unsicheren Umfeldes bedarf, damit die Faktoren der Komplexität ihre verzögernde Wirkung entfalten können. Die beiden Annahmen sind sozusagen also komplementär zueinander (vgl. Ebd., S. 11-12).
+
+Entsprechend dieser Überlegungen sortiert Golder das Thema Investitur unter der Kategorie der Komplexität, zusammen mit den Variablen zur Anzahl von effektiven Parteien im Parlament und ideologischer Polarisierung. Ihre Codierung dessen übernimmt sie jedoch, wie zuvor schon Diermeier und van Roozendaal, von Bergmans positivem und negativem Parlamentarismus (vgl. Ebd., S. 15-16). Ebenfalls orientiert sie sich an den beiden genannten Autoren bezüglich ihrer Operationalisierung von Unsicherheit (über den Status als Nachwahlkabinett). Ihre Kontrollvariablen gleichen sich ebenso stark mit denen der Untersuchung Diermeiers und van Roozendaals von 1998 - sie ergänzt dabei jedoch noch eine Variable dafür, ob es eine Partei mit alleiniger Mehrheit im Parlament gibt (vgl. Ebd., S. 13-17).
+
+Ihre Ergebnisse bestätigen weitestgehend Diermeier und van Roozendaals: höhere Unsicherheit (vorhanden direkt nach einer Wahl) führt zu einer längeren Dauer der Regierungsbildung, als wenn die Unsicherheit geringer ist (in einer Periode *zwischen* Wahlen). Ihre Hypothesen zur Komplexität bestätigten sich ebenfalls, abgesehen von jener zu den  Investiturregeln. Die Ergebnisse hier erscheinen für sie unklar, weshalb sie auf den Faktor der Bildung von Mehrheits- und Minderheitsregierungen verweist - bei letzteren spiele diese Variable durchaus eine Rolle. Während dieser Behauptung auf jeden Fall zuzustimmen ist, möchte diese Arbeit jedoch, wie bereits angemerkt, nochmals genauer nachprüfen, ob ähnliche Ergebnisse erzielt werden können, ohne dafür zu kontrollieren - jedoch unter Einbezug der unter 2.1 beschriebenen Codierung der Investiturregeln nach Cheibub et al. (2019).
 
 
 ## Warum ist eine solche Untersuchung relevant?
@@ -185,7 +222,38 @@ Um die nötigen Informationen zu beinhalten, wurde sich hier als Quelle vor alle
 
 Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informationen zu 29 Staaten hinterlegt sind, wurden für die restlichen Staaten weitere Aufsätze zum Thema, sowie teilweise und sofern notwendig die Verfassungen dieser Staaten, herangezogen, um die Informationen möglichst flächendeckend integrieren und nutzen zu können. Der Appendix dieser Arbeit enthält neben Informationen zum Codierschema in Form eines eigenen Codebooks für die sechs neu hinzugefügten Variablen auch etwaige Klarstellungen, auf welcher Basis diese Codierungen vorgenommen worden sind. Auf diese Weise wurden 353 Fälle von Regierungen aus *hier noch Anzahl einfügen* Ländern erarbeitet, für die alle Angaben eingefügt werden konnten.
 
+Zur Variable der Investiturrunden kann konstatiert werden, dass zwar in den Fällen eine Codierung vorgenommen wurde, in denen explizit bekannt ist wie viele Runden es geben kann - da dies jedoch die Anzahl verwertbarer Fälle in der Modellrechnung drastisch reduziert hätte, wurde, wie bereits in 2.1 konstatiert, von einer weiteren Verwendung dieser Variable zum jetzigen Zeitpunkt abgesehen, um diesen Informationsverlust zu vermeiden.
+
 # Analyse der Daten: Bargaining Duration vs. 6 Investitur-Dimensionen + Kontrollen
+
+Für den Analyseteil soll zunächst mit einem deskriptiven Überblick über die abhängige Variable *formDur*, also der Dauer der Regierungsbildung in den jeweiligen Staaten, begonnen werden.
+
+```{r Formationsdauer, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+investErdda <- investErdda %>% rename("formDur" = "v600e", "post_election_cab" = "v303e",
+                       "country_name" = "v001e")
+
+####
+
+investErdda$country_name <- factor(investErdda$country_name, labels = c("Austria", "Belgium", "Denmark", "Finland", 
+                                                                        "France", "Germany", "Greece", "Iceland",
+                                                                        "Ireland", "Italy", "Luxembourg",
+                                                                        "Netherlands", "Norway", "Portugal",
+                                                                        "Spain", "Sweden", "UK", "Bulgaria", 
+                                                                        "Cyprus", "Czech Rep.",
+                                                                        "Estonia", "Hungary", 
+                                                                        "Latvia", "Lithuania", "Malta", 
+                                                                        "Poland", "Romania", "Slovakia","Slovenia"))
+
+####
+
+investErdda %>%
+  group_by(country_name) %>% 
+  ggplot(aes(x = country_name, y = formDur)) +
+  geom_boxplot() +
+  theme_linedraw() +
+  theme(axis.text.x = element_text(angle = 90))
+```
+Hierbei wird ersichtlich, dass in manchen Staaten - z. B. in Österreich, aber vor allem in Belgien und den Niederlanden - im Verhältnis zu den anderen erfassten Formationszeiten für eine Regierung sehr viel mehr Zeit beansprucht wird, während andere Regierungen bereits unmittelbar, also nach 0 weiteren Tagen, feststehen. So liegen die mittleren 50% der erfassten Fälle in den Niederlanden circa zwischen 45 und 110 Tagen, während dazu im Vergleich in Polen oder dem Vereinigten Königreich die mittleren 50% der Fälle für die Dauer der Regierungsbildung in einem Intervall von circa 0 bis 30 Tagen liegen. Wie sich nun diese längeren oder kürzeren Intervalle erklären lassen, soll im Folgenden untersucht werden.
 
 ## Modell Diermeier/van Roozendaal 1998 und Modell Golder 2010
 
@@ -216,12 +284,11 @@ Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informa
 + Anschließend an Ecker/Meyer 2015: man könnte die gleiche Untersuchung mit dem vorliegenden Datensatz nochmals machen, jedoch gegliedert nach (Mittel-)Ost- und Westeuropa
 
 + Zum Datensatz selbst: weitere Ergänzungen zum Codierschema wären hilfreich, um auch Staaten wie Frankreich oder die Niederlande genauer zu erfassen, welche eher semi-verbriefte Investitur-Regelungen haben
-
-+ 
+  + Hier ebenfalls relevant: evtl. könnte im Datensatz nochmals genauer auf die maximale Anzahl von Investiturrunden eingegangen werden, bzw. hierzu recherchiert werden. Es bräuchte m. E. nach Länderexperten à la Sammelband 2015 auch für osteuropäische Regionen
 -->
 
 
-# Appendix
+# Anmerkungen zum Appendix
 
 Für vorliegende Arbeit lässt sich ein Online-Appendix abrufen. Dieser enthält, wie bereits angesprochen, das Codebook für etwaige im Zuge dieser Arbeit neu erstellte Variablen, sowie Notizen des Autors zu den Gründen für die Codierung. Ebenfalls lässt sich dort der Code für die Analyse zur Replikation finden. Erreicht werden kann dieser Appendix durch [diesen Link](https://github.com/FWisniewski44/CabInvest/tree/main).
 
@@ -244,10 +311,13 @@ Für vorliegende Arbeit lässt sich ein Online-Appendix abrufen. Dieser enthält
 
 + Bergman, Torbjörn (1993): *Formation rules and minority governments*, European Journal of Political Research, Vol. 23, S. 55-66.
 
++ De Winter, Lieven; Dumont, Patrick (2008): *Uncertainty and Complexity in Cabinet Formation*, in: Strøm, Kaare; Bergman, Torbjörn; Müller, Wolfgang (2008, Hrsg.): *Cabinets and Coalition Bargaining: The Democratic Life Cycle in Western Europe*, Oxford UP, Oxford, S. 123-157.
 
++ Saalfeld, Thomas (2008): *Institutions, Chance, and Choices: The Dynamics of Cabinet Survival*, in: Strøm, Kaare; Bergman, Torbjörn; Müller, Wolfgang (2008, Hrsg.): *Cabinets and Coalition Bargaining: The Democratic Life Cycle in Western Europe*, Oxford UP, Oxford, S. 327-368.
 
++ Ecker, Alejandro; Meyer, Thomas (2015): *The duration of government formation processes in Europe*, Research and Politics, October-December 2015, S. 1-9.
 
-
++ Ecker, Alejandro; Meyer, Thomas (2017): *Coalition Bargaining Duration in Multiparty Democracies*, British Journal of Political Science, Vol. 50, S. 261-280.
 
 
 
