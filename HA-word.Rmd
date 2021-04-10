@@ -1,7 +1,7 @@
 ---
 title: "Parlamentarisches Mitspracherecht bei Regierungskoalitionen"
 subtitle: "Die Auswirkung von Investiturregeln auf die Dauer von Regierungsbildungen in Europa"
-abstract: "Hier sollte das Abstract stehen. Maximal 200 Wörter. Fließtext der Arbeit zwischen 15 und 20 Seiten."
+abstract: "Vorliegende Arbeit hat das Ziel, die Auswirkungen von genauer codierten Investiturregeln auf die Dauer von Regierungsbildung in Europa zu untersuchen. Investiturregeln wurden in der Forschung bisher meist nicht gesondert betrachtet - stattdessen umfasste die Untersuchung an sich meist nur eine Variable über positiven oder negativen Parlamentarismus. Für diese Arbeit wurden auf Grundlage eines Konzeptes von Cheibub, Rasch und Martin diese spezielleren Variablen erzeugt, deren Auswirkungen auf die Dauer von Regierungsbildung in Europa mittels Event-History-Analyse genauer beleuchtet werden sollen. Nach einer theoretischen Einführung und einer genaueren Beschreibung der Datengrundlage folgt jene Analyse. Abschließend werden deren Ergebnisse diskutiert und Forschungsperspektiven aufgezeigt."
 author: "Florian Wisniewski"
 date: "`r Sys.Date()`"
 output:

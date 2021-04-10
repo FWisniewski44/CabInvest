@@ -4,7 +4,7 @@ subtitle: "Erweiterung des ERDDA durch Daten zum Investitur-Prozess nach Cheibub
 date: "`r Sys.Date()`"
 output:
   word_document:
-    reference_docx: "/Users/flo/Desktop/investiture/notes_cabInvest.docx"
+    reference_docx: "/Users/flo/Desktop/investiture/notesHA-word.docx"
     number_sections: TRUE
 ---
 
