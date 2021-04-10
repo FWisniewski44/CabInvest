@@ -1,12 +1,12 @@
 ---
-title: "Research Notes: Investiture Rules"
-subtitle: "Subcategories according to Cheibub, Martin and Rasch (2019)"
+title: 'Research Notes: Investiture Rules'
 author: "Florian Wisniewski"
 date: "`r Sys.Date()`"
 output:
   word_document:
-    number_sections: TRUE
+    number_sections: yes
     reference_docx: "/Users/flo/Desktop/investiture/notesHA-word.docx"
+subtitle: "Subcategories according to Cheibub, Martin and Rasch (2019)"
 ---
 
 ```{r setup, include=FALSE}
@@ -450,7 +450,7 @@ Also, see [ParlGov Database Documentation, Döring and Manow (2021)](http://www.
 
 The situation in Lithuania is a bit different, as apparently, there are two investiture votes cast by the Seimas, of which one concerns the PM-designé (appointed by the President; if the Seimas approves of her/him being the new *formateur*, he then is granted the chance to form a government), and the other being cast on the formed government as a whole afterwards. I will treat these two interchangeably as "one" vote, that is cast on both the designated PM **and** the government he/she forms. Also, Matonyte treats the day of the second IV as "Day in".
 
-Should the IV fail, we only have empirical evidence of what happens (see Matonyte 2019). Therefore, I coded it accordingly (0 = new IV).
+Should the IV fail, we only have *empirical* real-world evidence of what happens (see Matonyte 2019). Therefore, I coded it accordingly (0 = new IV).
 
 **Malta**
 
@@ -501,8 +501,6 @@ This is enough information to keep Slovenia in the data set.
 + Döring, Herbert; Manow, Phillipp (2021): *ParlGov Database Documentation*, abgerufen unter: http://www.parlgov.org/documentation/country/ (Stand: 06.04.2021).
 
 + Bergman, Torbjørn; Ilonszki, Gabriella; Müller, Wolfgang (2019): *Coalition Governance in Central Eastern Europe*, Oxford UP, Oxford. Published online (Oxford Scholarship online): https://oxford.universitypressscholarship.com/view/10.1093/oso/9780198844372.001.0001/oso-9780198844372-chapter-1 (as of 07.04.2021).
-
-+ 
 
 
 

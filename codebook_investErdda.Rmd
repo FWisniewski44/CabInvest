@@ -71,6 +71,14 @@ Dieser Datei ist das Codierschema für den Datensatz 'investERDDA' (Wisniewski 2
     + "Negative Mehrheit" umfasst alle Mehrheitsregelungen im Investiturvotum, bei denen sich eine Mehrheit *gegen* die Investitur einer zur Wahl stehenden Regierung aussprechen müsste.
   + 1 = Positive Mehrheit
     + Hierunter fallen sowohl solche Abstimmungen unter *absoluter Mehrheit* als auch jene unter *relativer Mehrheit*.
+    
+# invest_Rounds
+
++ *Label*:
+  + Anzahl der maximal durchführbaren Investiturrunden
+  
++ *Coding*:
+  + Wert = # von Runden
 
 # Literaturangaben
 

@@ -74,12 +74,31 @@ investErdda <- investErdda %>%
 
 # generate factor (create individual levels) for the countries and change label names (for graphic used in paper)
 
-investErdda$country_name <- factor(investErdda$country_name, labels = c("Austria", "Belgium", "Denmark", "Finland", "France",
-                                            "Germany", "Greece", "Iceland", "Ireland", "Italy",
-                                            "Luxembourg", "Netherlands", "Norway", "Portugal", "Spain",
-                                            "Sweden", "UK", "Bulgaria", "Cyprus", "Czech Rep.",
-                                            "Estonia", "Hungary", "Latvia", "Lithuania", "Malta",
-                                            "Poland", "Romania", "Slovakia", "Slovenia"))
+investErdda$country_name <- factor(investErdda$country_name, labels = c("Austria", "Belgium", "Denmark", "Finland", 
+                                                                        "France", "Germany", "Greece", "Iceland",
+                                                                        "Ireland", "Italy", "Luxembourg", 
+                                                                        "Netherlands", "Norway", "Portugal",
+                                                                        "Spain", "Sweden", "UK", "Bulgaria",
+                                                                        "Cyprus", "Czech Rep.", "Estonia",
+                                                                        "Hungary", "Latvia", "Lithuania", "Malta", 
+                                                                        "Poland", "Romania", 
+                                                                        "Slovakia", "Slovenia"))
+
+# subset for golder and diermeier/v. roozendaal
+
+investSub <- subset(investErdda, select = c("formDur", "invest_timing", "invest_rightToNominate", "invest_whoVotes",
+                                            "invest_voteTarget", "invest_failure", "invest_decisionRule",
+                                            "post_election", "new_gov", "effec_parties_parl", "polarization",
+                                            "largest_party_dist", "majority_sit"))
+
+# subset for best fit model
+
+investBestFit <- subset(investErdda, select = c("formDur", "invest_timing", "invest_whoVotes", 
+                                                "invest_failure", "invest_decisionRule", 
+                                                "post_election", "new_gov", "effec_parties_parl", 
+                                                "polarization", "largest_party_dist", "majority_sit"))
+
+investBestFit <- na.omit(investBestFit)
 
 
 ```
@@ -145,7 +164,7 @@ Im Sammelband von 2015 legen die Autoren nachfolgend ebenso kurze Erklärungen u
 + **Nominierungsrecht für das Investiturvotum**
   + Das Nominierungsrecht bestimmt, von wem die für das Parlament zur Wahl stehenden Kandidaten bestimmt werden: entweder durch den Präsidenten/die Präsidentin, oder aber durch das Parlament selbst.
 
-Zu diesen Erklärungen ist anzumerken, dass der Sammelband von 2015 die ersten sechs Dimensionen umfasst (vgl. Rasch et al. 2015, S. 16-19) - jedoch wurde im Paper von 2019 die **Anzahl möglicher Abstimmungsrunden** durch das **Nominierungsrecht** ausgetauscht (vgl. Cheibub et al. 2019, S. 353). Vorliegende Arbeit wird, auch aufgrund von Datenverlust bei der Variable zu den möglichen Investiturrunden, da hierfür oftmals keine eindeutigen Angaben gemacht werden konnten, die sechs Dimensionen nach Cheibub et al. (2019) zur Anwendung bringen.
+Zu diesen Erklärungen ist anzumerken, dass der Sammelband von 2015 die ersten sechs Dimensionen umfasst (vgl. Rasch et al. 2015, S. 16-19) - jedoch wurde im Paper von 2019 die **Anzahl möglicher Abstimmungsrunden** durch das **Nominierungsrecht** ausgetauscht (vgl. Cheibub et al. 2019, S. 353). Vorliegende Arbeit wird, auch aufgrund von Datenverlust bei der Variable zu den möglichen Investiturrunden, da hierfür oftmals keine eindeutigen Angaben gemacht werden konnten, die Dimensionen nach Cheibub et al. (2019) zur Anwendung bringen.
 
 ## Zum bisherigen Forschungsstand bezüglich der Dauer von Regierungsbildung
 <!--
@@ -189,7 +208,7 @@ Ihre Ergebnisse bestätigen weitestgehend Diermeier und van Roozendaals: höhere
 + Auch muss angemerkt sein: bisher wurden die sechs Ebenen nur für Minderheitsregierungen gecheckt - das gehört geändert, man muss das für alle checken
 -->
 
-Den Ausführungen aus 2.1 zu den theoretischen Überlegungen, das Investiturvotum über die sechs Dimensionen eingehender zu erfassen, als rein über den Bergman'schen positiven oder negativen Parlamentarismus, pflichtet diese Arbeit bei. Auf diese Weise bietet sich eine gute Möglichkeit, die formale Rolle von Parlamenten im Regierungsbildungsprozess noch genauer zu beleuchten. Dies soll keinesfalls bedeuten, dass die Grundlagenarbeit Bergmans in irgendeiner denkbaren Weise nicht gewürdigt werde - vielmehr sieht vorliegende Arbeit in den Ergebnissen der drei Autoren eine Art inkrementelle Innovation zur sinnvollen Erweiterung des Grundgedankens.
+Den Ausführungen aus 2.1 zu den theoretischen Überlegungen, das Investiturvotum über die sechs Dimensionen eingehender zu erfassen, als rein über den Bergman'schen positiven oder negativen Parlamentarismus, pflichtet diese Arbeit bei. Auf diese Weise bietet sich eine gute Möglichkeit, die formale Rolle von Parlamenten im Regierungsbildungsprozess noch genauer zu beleuchten. Dies soll keinesfalls bedeuten, dass die Grundlagenarbeit Bergmans in irgendeiner denkbaren Weise nicht gewürdigt werde - vielmehr sieht vorliegende Arbeit in den Ergebnissen der drei Autoren eine Art inkrementelle Innovation zur sinnvollen Erweiterung des Grundgedankens. Jedoch sollten deren Dimensionen im Licht einer verhandlungs- bzw. spieltheoretischen Interpretation zur Unsicherheit in der Verhandlungsumgebung angepasst werden. So wurden für die spätere Analyse aus diesem Grund die Variablen für das **Nominierungsrecht** und zum **Ziel des Votums** ausgeschlossen, da für diese beiden theoretisch fundiert keine Verlängerung der Dauer von Regierungsbildungen angenommen werden kann - in beiden Fällen handelt es sich lediglich um Fakten, die weder die Komplexität, noch die Unsicherheit erhöhen, um mit Golder zu argumentieren. Doch für die verbliebenen Dimensionen zum **Timing**, den **abstimmenden Instanzen**, dem **Vorgehen bei Fehlschlag** und der **Mehrheitsregelung** kann gesagt werden, dass diese durchaus einzeln, oder aber auch in Kombination miteinander, diese beiden Kernfaktoren beeinflussen können.
 
 Doch muss auch angemerkt werden, dass die Autoren bezüglich des eigenen Forschungsinteresses ausschließlich Minderheitsregierungen und die Auswirkungen der einzelnen Investitur-Dimensionen auf die Formation dieser untersuchen wollten, wie sowohl aus dem einführenden Kapitel in den Sammelband von 2015 als auch im Paper von 2019 deutlich wird. Aus diesem Grund hat es sich vorliegende Arbeit zum Ziel gesetzt, diesen Filter beiseite zu schieben und den Blick erneut zu weiten, weshalb nun dieses Schema auch im breiteren Kontext betrachtet werden soll, ohne zwischen Minderheits- oder Mehrheitsregierung zu unterscheiden. Zusätzlich wird nicht die gebildete Regierungsform im Fokus stehen, sondern, wie bereits angedeutet, die Dauer der jeweiligen Regierungsbildungen.
 
@@ -204,7 +223,7 @@ Bezüglich der abhängigen Variable der *Dauer der Regierungsbildung* hält sich
 
 Ebenfalls gilt es bei der Nutzung von Cox PH-Modellen darauf zu achten, dass die Modellvoraussetzungen eingehalten werden. Deswegen werden bei allen gerechneten Modellen die Schoenfeld-Residuen berechnet, um Aussagen über die (Nicht-)Einhaltung der Proportional Hazards Assumption (fortan auch PH Assumption) machen zu können. Diese muss eingehalten werden, um zu gewährleisten, dass die Verteilung der Variablen, deren Einfluss über die Zeit hinweg untersucht werden soll, nicht konstant ist - also sprich, dass kein signifikanter Zusammenhang besagter Schoenfeld-Residuen mit der verstrichenen Zeit vorliegt. Variablen im Modell, die diese Modellvoraussetzung verletzen, werden ausgeschlossen. Ebenso wird mittels einer einfachen Korrelationsmatrix auf die Korrelation der Variablen untereinander getestet, welche im Modell beinhaltet werden sollen.
 
-Die Interpretation der Koeffizienten, welche durch die gerechneten Modell erhalten werden, erfolgt ebenfalls analog zu Golder: Bei den errechneten Koeffizienten handelt es sich um sogenannte proportionale Hazard-Schätzungen. Jene Koeffizienten mit positivem Vorzeichen drücken dabei eine Erhöhung der *hazard rate* aus, was gleichbedeutend mit einer schnelleren Regierungsbildung (also einem schnelleren Eintreten des Ereignisses "Regierungsbildung") ist. Dem gegenüber drücken jene Koeffizienten mit einem positiven Vorzeichen eine langsamere Regierungsbildung aus: die *hazard rate* wird verringert und daher tritt das Ereignis "Regierunsbildung" weniger schnell ein (vgl. Golder 2010, S. 22).
+Die Interpretation der Koeffizienten, welche durch die gerechneten Modell erhalten werden, erfolgt ebenfalls analog zu Golder: Bei den errechneten Koeffizienten handelt es sich um sogenannte proportionale Hazard-Schätzungen. Jene Koeffizienten mit positivem Vorzeichen drücken dabei eine Erhöhung der *hazard rate* aus, was gleichbedeutend mit einer schnelleren Regierungsbildung (also einem schnelleren Eintreten des Ereignisses "Regierungsbildung") ist. Dem gegenüber drücken jene Koeffizienten mit einem positiven Vorzeichen eine langsamere Regierungsbildung aus: die *hazard rate* wird verringert und daher tritt das Ereignis "Regierungsbildung" weniger schnell ein (vgl. Golder 2010, S. 22).
 
 # Daten: ERDDA, aber selbst modifiziert
 
@@ -220,19 +239,18 @@ Da jedoch im ERDDA-Datensatz, wie zu erwarten war, nicht die von Cheibub et al. 
 
 Um die nötigen Informationen zu beinhalten, wurde sich hier als Quelle vor allem auf den Sammelband *Parliaments and Government Formation. Unpacking Investiture Rules* gestützt, welcher ebenfalls von Bjørn Erik Rasch, Shane Martin und José Antonio Cheibub im Jahr 2015 herausgegeben wurde. Darin finden sich Fallstudien zu 16 Staaten. Von diesen 16 Fallstudien musste jene zu Indien aufgrund von Nicht-Existenz im ERDDA-Datensatz ausgeschlossen werden. Für alle anderen Staaten wurden die Informationen aus den Fallstudien anhand eines selbst erstellten Codierschemas in den ERDDA-Datensatz integriert, um für diese Arbeit nutzbar gemacht zu werden.
 
-Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informationen zu 29 Staaten hinterlegt sind, wurden für die restlichen Staaten weitere Aufsätze zum Thema, sowie teilweise und sofern notwendig die Verfassungen dieser Staaten, herangezogen, um die Informationen möglichst flächendeckend integrieren und nutzen zu können. Der Appendix dieser Arbeit enthält neben Informationen zum Codierschema in Form eines eigenen Codebooks für die sechs neu hinzugefügten Variablen auch etwaige Klarstellungen, auf welcher Basis diese Codierungen vorgenommen worden sind. Auf diese Weise wurden 353 Fälle von Regierungen aus *hier noch Anzahl einfügen* Ländern erarbeitet, für die alle Angaben eingefügt werden konnten.
+Da nun jedoch, wie bereits in der Beschreibung des ERDDA angemerkt, dort Informationen zu 29 Staaten hinterlegt sind, wurden für die restlichen Staaten weitere Aufsätze zum Thema, sowie teilweise und sofern notwendig die Verfassungen dieser Staaten, herangezogen, um die Informationen möglichst flächendeckend integrieren und nutzen zu können. Der Appendix dieser Arbeit enthält neben Informationen zum Codierschema in Form eines eigenen Codebooks für die sechs neu hinzugefügten Variablen auch etwaige Klarstellungen, auf welcher Basis diese Codierungen vorgenommen worden sind. Auf diese Weise wurden (nach Bereinigung von mit "NA" codierten Werten) 321 Regierungen aus 19 Ländern erarbeitet, für die alle Angaben eingefügt werden konnten und welche in der Analyse nutzbar waren - somit liegt eine ausreichend große Fallzahl vor.
 
 Zur Variable der Investiturrunden kann konstatiert werden, dass zwar in den Fällen eine Codierung vorgenommen wurde, in denen explizit bekannt ist wie viele Runden es geben kann - da dies jedoch die Anzahl verwertbarer Fälle in der Modellrechnung drastisch reduziert hätte, wurde, wie bereits in 2.1 konstatiert, von einer weiteren Verwendung dieser Variable zum jetzigen Zeitpunkt abgesehen, um diesen Informationsverlust zu vermeiden.
 
 # Analyse der Daten: Bargaining Duration vs. 6 Investitur-Dimensionen + Kontrollen
 
-Für den Analyseteil soll zunächst mit einem deskriptiven Überblick über die abhängige Variable *formDur*, also der Dauer der Regierungsbildung in den jeweiligen Staaten, begonnen werden.
+Für den Analyseteil vorliegender Arbeit ergibt sich eine Untergliederung in zwei Subkapitel: im ersten sollen die Modelle von Diermeier und van Roozendaal von 1998, sowie von Golder 2010 - soweit dies mit der Variablenauswahl des ERDDA-Datensatzes möglich ist - erneut gerechnet werden. Dabei soll die Variable für Investitur, welche zuvor nur dichotom als "positiver/negativer Parlamentarismus" betrachtet wurde durch die angesprochenen vier verbleibenden, theoretisch relevanten Investiturdimensionen nach Cheibub et al. (2019) ersetzt werden, um deren Auswirkungen auf die Formationsdauer von Regierungen beobachten zu können. Hierzu soll dann jeweils kurz auf die modellspezifischen Werte und Koeffizienten eingegangen werden - sowohl im Vergleich zueinander, da Golder eine neue Variable hinzugefügt hatte, aber auch zwischen dem aktuellen Modell dieser Arbeit und den anderen beiden Modellen in der Rückschau, um etwaige Veränderungen diskutieren zu können.
+Im zweiten Subkapitel soll, zum Abschluss der Arbeit, noch ein "best fitting" Modell gerechnet werden, um das Modell mit den besten Signifikanzwerten, sowie der größten Erklärungskraft herausfiltern zu können. Auch hier wird auf eventuell veränderte Befunde zu Diermeier und van Roozendaal, sowie Golder, eingegangen werden.
+
+Zunächst jedoch lohnt ein deskriptiver Überblick über die abhängige Variable *formDur*, also der Dauer der Regierungsbildung in den jeweiligen Staaten, um etwaige Unterschiede nicht nur in Zahlenform zu sehen, sondern auch graphisch dargestellt in Augenschein nehmen zu können.
 
 ```{r Formationsdauer, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-investErdda <- investErdda %>% rename("formDur" = "v600e", "post_election_cab" = "v303e",
-                       "country_name" = "v001e")
-
-####
 
 investErdda$country_name <- factor(investErdda$country_name, labels = c("Austria", "Belgium", "Denmark", "Finland", 
                                                                         "France", "Germany", "Greece", "Iceland",
@@ -242,7 +260,7 @@ investErdda$country_name <- factor(investErdda$country_name, labels = c("Austria
                                                                         "Cyprus", "Czech Rep.",
                                                                         "Estonia", "Hungary", 
                                                                         "Latvia", "Lithuania", "Malta", 
-                                                                        "Poland", "Romania", "Slovakia","Slovenia"))
+                                                                        "Poland", "Romania","Slovakia","Slovenia"))
 
 ####
 
@@ -251,32 +269,129 @@ investErdda %>%
   ggplot(aes(x = country_name, y = formDur)) +
   geom_boxplot() +
   theme_linedraw() +
-  theme(axis.text.x = element_text(angle = 90))
+  theme(axis.text.x = element_text(angle = 90)) +
+  labs(title = "Dauer der Regierungsbildung in den im Datensatz vertretenen Ländern",
+       x = "Länder",
+       y = "Dauer in Tagen",
+       caption = "Daten des Autors und ERDDA 2014")
 ```
 Hierbei wird ersichtlich, dass in manchen Staaten - z. B. in Österreich, aber vor allem in Belgien und den Niederlanden - im Verhältnis zu den anderen erfassten Formationszeiten für eine Regierung sehr viel mehr Zeit beansprucht wird, während andere Regierungen bereits unmittelbar, also nach 0 weiteren Tagen, feststehen. So liegen die mittleren 50% der erfassten Fälle in den Niederlanden circa zwischen 45 und 110 Tagen, während dazu im Vergleich in Polen oder dem Vereinigten Königreich die mittleren 50% der Fälle für die Dauer der Regierungsbildung in einem Intervall von circa 0 bis 30 Tagen liegen. Wie sich nun diese längeren oder kürzeren Intervalle erklären lassen, soll im Folgenden untersucht werden.
 
-## Modell Diermeier/van Roozendaal 1998 und Modell Golder 2010
+## Diermeier/van Roozendaal 1998 mit neuen Investitur-Variablen
 
-<!--
-+ Es ist klar, dass keine volle Vergleichbarkeit herrschen kann, da zu anderen Zeitpunkten mit anderen Datensätzen gemachte Untersuchungen vorliegen
+Nun zunächst zum Modell von 1998. Diermeier und van Roozendaal beinhalteten darin, nach ihrem unter 2.2 dargelegten Ansatz, folgende zwei Variablen, welche für sie den Faktor Unsicherheit messbar machen sollen. Diese Variablen sollen also dadurch beide zu einer längeren Verhandlungsdauer unter größerer Unsicherheit führen:
 
-+ Genau darzulegen: welche Variablen werden als Kontrollen beinhaltet? (vgl. so, wie das auch Diermeier/v. Roozendaal und Golder gemacht haben)
--->
++ **"Post-Wahl-Status"** (als eine Art Proxy für den Faktor Unsicherheit)
+  + Hier repräsentiert durch *post_election*
+  + Annahme ist, dass hierdurch die Formationsdauer einer neuen Regierung vergrößert wird. Direkt nach einer Wahl sind die Akteure mit neuen Koalitionsoptionen konfrontiert - in der Zwischenwahlperiode wäre dies nicht der Fall.
 
++ **"Vorherige Niederlage?"** (ebenso eine Art Proxy zur Messbarmachung von Unsicherheit als Faktor)
+  + Hier keine direkte Variable im Datensatz; vertreten durch *new_gov*
+  + Annahme ist, dass es zu einer Erhöhung der Dauer kommt, da durch eventuelle personelle Umwälzungen und Führungskämpfe die Unsicherheit steigt.
+
+Weiterhin nutzen sie die nun folgenden Variablen, um einige systemstrukturelle Merkmale einzubeziehen, welche die Komplexität der Verhandlungsumgebung beeinflussen können. Diesen rechnen sie jedoch allesamt wenig bis gar kein Erklärungspotential zu, da sie den rein auf Unsicherheit beruhenden Ansatz verfolgen:
+
++ **"Geschäftsführende Regierung"** (ob es sich um eine solche Regierung handelt oder nicht)
+  + Aufgrund fehlender Daten im ERDDA-Datensatz konnte diese Variable leider nicht mit aufgenommen werden
+
++ **"Kontinuitätsregeln"** (Erfassung, ob die amtierende Regierung nach Wahlen den ersten Formierungsversuch unternehmen dürfte)
+  + Auch diese Variable lag im Datensatz nicht vor und konnte deshalb nicht aufgenommen werden
+
++ **"Investitur"** (Erfassung von positivem oder negativem Parlamentarismus)
+  + Diese Variable wird hier nun durch die vier relevanten Ebenen erfasst
+  
++ **"Anzahl effektiver Parteien"** (nach dem Index von Laakso und Taagepera von 1979)
+  + Hier erfasst durch *effec_parties_parl*
+  
++ **"Polarisierung"** (der Grad, wie stark die Parteienlandschaft im Parlament polarisiert ist)
+  + Dies entspricht hier der Variable *polarization*
+  
++ **"Identifizierbarkeit"** (als Variable zur Arena, in der Wähler und Parteien miteinander agieren gedacht; wie gut können die Wähler vielleicht schon vor der Wahl mögliche Koalitionen ausmachen und dementsprechend Wahlverhalten danach ausrichten?)
+  + Da keine explizite Variable hierfür im Datensatz gefunden wurde, wurde sich für die Variable *largest_party_dist* erfasst. Diese stellt dar, wie weit die größte Parlamentspartei von der Medianpartei ideologisch entfernt ist (basierend auf einer Punktebewertung der Parteiprogramme). Die Überlegung wäre also folgendermaßen: wenn die Distanz geringer ist, dann wären auch ideologische Kongruenzen für die Wählerschaft leichter erkennbar.
+
+Daraus leitet sich dann folgendes Modell ab:
 
 ```{r model 1: diermeier-v.Roozendaal 1998, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 
+dierm_roozen <- coxph(data = investSub, Surv(time = formDur) ~ post_election + new_gov + invest_timing +
+                        invest_whoVotes + invest_failure + invest_decisionRule + effec_parties_parl + polarization +
+                        largest_party_dist)
+
+
+logLik(dierm_roozen)
+summary(dierm_roozen)
+# cox.zph(dierm_roozen)
+# car::vif(dierm_roozen)
+
 ```
 
+Dass keine volle Vergleichbarkeit der Modelle gegeben ist, muss konstatiert werden: es fehlen schließlich aufgrund des Mangels von Daten einige Variablen bzw. wurden diese durch andere, ähnliche ersetzt. Vergleicht man nun dennoch die auch im hiesigen Modell vorhandenen Ergebnisse mit dem "Combined model" des Vorbildmodells von 1998 (vgl. Diermeier/van Roozendaal 1998, S. 625), so ergibt sich zunächst für die Unsicherheits-Variable *post_election* ein ähnliches Bild: sie ist signifikant und mit negativem Vorzeichen im Modell vertreten, dies bedeutet, dass es sich um einen die Dauer von Verhandlungen verlängernden Faktor handelt. Für die Variable *new_gov* ergibt sich zwar das passende Vorzeichen, doch ist der Wert im aktuellen Modell nicht mehr signifikant (der Wert für die "non-partisan governments" kann aufgrund von geringer Fallzahlen ignoriert werden). Jedoch wurde hier, wie gesagt, eine andere Variable verwendet, als sie wahrscheinlich im Falle Diermeiers und van Roozendaals vorlag.
+
+Interessanter ist nun in diesem Kontext der Blick auf die neu codierten Investiturvariablen: während im 1998er Modell keine Signifikanz für die Variable gegeben war, ergibt sich nun für die 4 Ebenen ein anderer Effekt. Zunächst sind alle vier Ebenen mit signifikanten Effekten vertreten. In Fällen mit *ex-ante-Votum*, in jenen mit *einer wahlberechtigten Kammer* und in jenen mit *direkten Neuwahlen im Falle des Scheiterns* (hier liegen jedoch nur 34 Fälle von Regierungen vor, in denen das der Fall ist) scheint laut dem Modell ein signifikanter Effekt vorzuliegen, welcher dazu führt, dass die Dauer der Regierungsbildung hier verringert wird, wie durch das positive Vorzeichen angezeigt wird. Dagegen scheint ein signifikanter Effekt zu bestehen, welcher dazu führt, dass in Systemen mit *absoluter oder relativer, positiver Mehrheit* eine erhöhte Regierungsbildungsdauer vorgefunden werden kann. 
+Somit scheint die Argumentation von Diermeier und van Roozendaal, zumindest im Falle der hier vorliegenden, erweiterten Daten, nicht zutreffend zu sein, da sie angenommen hatten, dass es keinerlei Effekte geben dürfte.
+
+## Golder 2010 mit neuen Investiturvariablen
+
+Als nächstes soll in aller Kürze ebenfalls das Modell Golders von 2010, inklusive der vier neuen Kategorien, gerechnet werden, um dann auch kurz etwas zu den neuen Ergebnissen zu sagen. Golder beinhaltet, wie bereits konstatiert, dieselben Variablen wie auch Diermeier und van Roozendaal, jedoch ohne jene zu einer **vorherigen Niederlage** und zu **Identifizierbarkeit**. Dafür beinhaltet sie eine neue Variable:
+
++ **Partei mit Mehrheit im Parlament** (ob es eine Partei gibt, welche mehr als 50% der Sitze im Parlament innehat)
+  + Hier wird diese repräsentiert durch *majority_sit*
+  
+Außerdem wurden von Golder einige Interaktionseffekte beinhaltet. Da diese jedoch allesamt nach einer Kontrolle in sehr starkem Ausmaß gegen die PH-Assumption verstießen, wurden sie wieder aus dem Modell entfernt. Es ergibt sich damit folgendes Modell:
 
 ```{r model 2: golder 2010, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 
+golder <- coxph(data = investSub, Surv(time = formDur) ~ post_election + effec_parties_parl + polarization +
+                  invest_timing + invest_whoVotes + invest_failure + invest_decisionRule + majority_sit)
+
+logLik(golder)
+summary(golder)
+# cox.zph(golder)
+# car::vif(golder)
+
 ```
 
+Ähnlich den Befunden für ein erneuertes 1998er Modell ist besonders die Signifikanz der Variable *post_election* als Proxy für die Unsicherheit der Verhandlungsumgebung herauszustellen. Hier ist erneut ein hochsignifikanter Effekt vorhanden, welcher für eine Verlängerung der Dauer von Regierungsbildung sorgt. Im Unterschied zum Modell von Golder selbst ist der Komplexitätseffekt der Variable *effec_parties_parl* hier signifikant und in der von ihr theoretisch erwarteten Richtung: es kommt zu einer Verlängerung der Dauer von Regierungsbildung, wenn mehr effektive Parteien im Parlament zu finden sind.
+Wendet man sich jedoch auch hier wieder den neu ins Modell eingebrachten Investiturdimensionen zu, so wird klar, dass sich - mit Ausnahme der Variable zum *Fehlschlag des Votums* - die gleichen Effekte wie bei Diermeier ergeben. Doch da Golder interpretatorisch explizit auch Faktoren betrachtete, die dem Spektrum der Komplexität zuzurechnen waren, ist ihr hier, zumindest im Falle der Mehrheitsregelung, Recht zu geben. Da die Interaktionseffekte zwischen *post_election* und den Investiturvariablen jedoch, wie bereits gesagt, nicht mit beinhaltet worden sind, kann jedoch ihre theoretische Überlegung, dass Komplexität und Unsicherheit miteinander wirken und die Dauer von Regierungsbildung erhöhen, im Fall der Kontrolle für die vier relevanten Investitur-Dimensionen nicht als bestätigt gesehen werden.
 
 ## Eigenes best fit-Modell aus 1998 und 2010 (kombiniert)
 
+Nachdem nun sowohl das Modell von Golder, als auch jenes von Diermeier und van Roozendaal, *inklusive* der neu codierten Investitur-Variablen, rekreiert wurden und zu den Ergebnissen berichtet wurde, soll nun auch noch von Seiten dieser Arbeit ein abschließendes Modell aufgestellt werden. Dabei soll es sich um einen "best fit" handeln: ein Modell, das nur noch signifikante Variablen beinhaltet.
 
+Die darin genutzten Variablen enstprechen jenen aus den beiden bereits behandelten Modellen - jedoch wird nun mittels der Statistiksoftware R ermittelt, welche Variablen aus dem Modell ausgeschlossen und welche beinhaltet werden sollten. Als Orientierungsmaß nutzt die Software in diesem Fall den AIC-Wert, um zwischen den einzelnen durchgegangenen Modellen eine gewisse Vergleichbarkeit herzustellen. Dieses Modell setzt sich nun wie folgt zusammen:
+
+```{r best fit, echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+# preparation models
+modNull <- coxph(data = investBestFit, Surv(time = formDur) ~ 1)
+modFull <- coxph(data = investBestFit, Surv(time = formDur) ~ .)
+
+# step function based on AIC
+# stepAIC(modNull, scope = list(upper = modFull), direction = "both")
+
+# best fitting model and summary statistics on bestFit
+bestFit <- coxph(formula = Surv(time = formDur) ~ post_election + invest_whoVotes + 
+                   majority_sit + invest_failure + effec_parties_parl + invest_decisionRule + 
+                   invest_timing, data = investBestFit)
+
+logLik(bestFit)
+summary(bestFit)
+cox.zph(bestFit)
+car::vif(bestFit)
+```
+
+Aus diesem Modell wird ersichtlich, dass weiterhin die Variable des Faktors Unsicherheit, **dem Status als Nachwahl-Kabinett**, signifikant bleibt, auch wenn der Blick auf das best fit-Modell gelenkt wird. Dieser verhandlungstheoretische Faktor kann somit, auch im Schlaglicht des Einbeziehens einer genaueren Betrachtung der Investiturvariablen nach Cheibub et al. (2019), als wichtiger, die Dauer von Regierungsbildung verzögernder Faktor gesehen werden.
+Ebenso mit negativem Vorzeichen ist die Variable zum **Vorhandensein einer Mehrheitspartei im Parlament** versehen; der verzögernde Effekt dieser ist jedoch so gering, dass er in diesem Fall eher vernachlässigt werden kann (auch sichtbar durch den Blick auf die exponentierten Koeffizienten, die sogenannten "hazard ratios" - der Wert von 1 zeigt, dass es keine Veränderung gibt, egal ob eine Mehrheits- oder Minderheitssituation vorliegt).
+Auch der Effekt der **Anzahl effektiver Parteien im Parlament** scheint auch im best fit-Modell die Annahmen Golders über Komplexität in der Verhandlungsumgebung und deren verzögernde Wirkung zu bestätigen - jedoch wurde im hiesigen Modell aus den zuvor angegebenen Gründen nicht auf die Zeitkomponente kontrolliert.
+
+Richtet man nun den Blick auf die neu codierten und an den ERDDA-Datensatz angefügten Investitur-Dimensionen, so wird deutlich, dass die zuvor auf 4 für die Untersuchung relevante Ebenen reduzierten Variablen alle auch im best fit-Modell vertreten sind.
+
+**Ob also eine oder zwei Kammern abstimmen**, kann zu einer Verringerung der Dauer von Regierungsverhandlungen führen: wenn nur eine Kammer abstimmt, ist die Verringerung der Dauer zu erwarten. Dies kann ebenfalls wieder unter Einbeziehung des Faktors Komplexität erklärt werden, da eine zusätzliche Kammer als institutioneller Vetospieler gesehen werden könnte (vgl. Tsebelis 2002, S. 141) - somit wäre bei mehr als einer Kammer auch eine größere Komplexität gegeben.
+
+**Ob bei einem Fehlschlag der Investitur direkt Neuwahlen durchgeführt werden oder ob es zu neuen Investiturrunden kommt** kann ebenso für eine Verringerung der Verhandlungsdauer sorgen. Dabei kann auf Basis des best fit-Modells gesagt werden, dass im Falle von sofortigen Neuwahlen gegenüber neuer Investiturrunden die Dauer der Regierungsbildung verringert wird. Dieses Ergebnis kann jedoch auch etwas konterintuitiv erscheinen bzw. ist nicht ganz klar. Hierfür ist noch weitere Forschung vonnöten, in welcher beispielsweise die Anzahl der Investiturrunden ebenfalls in ein Modell einfließt.
+
+**Ob mit einer positiven Mehrheitsregel, also absoluter/relativer Mehrheit, oder mit einer negativen Mehrheitsregel abgestimmt wird** beeinflusst ebenfalls die Dauer von Regierungsbildung, wenn man sich den Koeffizienten im Modell ansieht. Das negative Vorzeichen zeigt, dass für eine positive Mehrheitsregel, bei der eine Regierung ein Investiturvotum auch schneller bzw. überhaupt verlieren kann, eine Verzögerung der Regierungsbildung angenommen werden kann. Rein logisch aus der Komplexitäts-Perspektive heraus gesehen erscheint dies ebenfalls sinnvoll: wenn eine Regierung eine Mehrheit im Investiturvotum *für* sich gewinnen muss, so ist dies schwieriger zu bewerkstelligen, als wenn die "Bringschuld" beim Parlament gelegen ist, welches eine Mehrheit *gegen* die zur Wahl stehende Regierung besorgen müsste.
+
+Zuletzt noch zum Effekt des **Timings des Investiturvotums**. Hier wird ersichtlich, dass es im Falle eines ex ante-Votums zu einer Verringerung der Dauer von Regierungsbildungen gegenüber eines ex post-Votums kommt. Erneut könnte aus der Komplexitäts-Perspektive nach Golder schlussgefolgert werden, dass es hier zu einer Verminderung von Komplexität kommt: wenn die Akteure bereits vor dem eigentlichen Regierungsantritt wissen, ob eine von ihnen vorgeschlagene Regierung das Vertrauen des Parlamentes genießt oder nicht, so ist dies für sie ein Informationsgewinn. Sollte nun ein Fehlschlag des Votums folgen, so wüssten die Akteure direkt, welche Koalition nicht mehr in Frage käme und könnten dies ausschließen, was auch zur Reduktion von Komplexität führen könnte. Wenn jedoch, wie beispielsweise in Italien der Fall, erst nach offizieller Amtseinführung abgestimmt werden würde, so müsste der gesamte Investitur-Prozess erneut von vorn beginnen - und folglich mit einer logischen Verzögerung weitergeführt werden. 
 
 # Ergebnisse der Analyse, Fazit, Schluss, Ausblick
 
@@ -287,10 +402,20 @@ Hierbei wird ersichtlich, dass in manchen Staaten - z. B. in Österreich, aber v
   + Hier ebenfalls relevant: evtl. könnte im Datensatz nochmals genauer auf die maximale Anzahl von Investiturrunden eingegangen werden, bzw. hierzu recherchiert werden. Es bräuchte m. E. nach Länderexperten à la Sammelband 2015 auch für osteuropäische Regionen
 -->
 
+Diese Arbeit hatte es sich zunächst zum Ziel gesetzt, die von Rasch et al. (2015) und Cheibub et al. (2019) erarbeiteten Dimensionen von Investiturvoten für so viele Staaten des ERDDA-Datensatzes wie möglich zu erfassen. Dieses Unterfangen ist geglückt, soweit dies unter den für diese Arbeit vorliegenden Rahmenbedingungen möglich war. Dennoch sollte zum Abschluss festgehalten werden, dass es gerade im Bereich der Datenerfassung ebenso noch offene Fragen gibt, für die es für zukünftige Forschung lohnt,sie aufzugreifen.
+
+So stützte sich die Akquise der Daten zunächst stark auf den Sammelband zu Investiturregeln von Rasch et al. aus dem Jahr 2015. Dieser lieferte Informationen, die für vorliegende Arbeit von unschätzbarem Wert waren - doch darüber hinaus musste sich auf anderem Wege beholfen werden. Da als grundlegende Strukturdaten jene des ERDDA verwendet wurden, worin 29 Staaten erfasst wurden, jedoch mittels der Länder-Fallstudien des Sammelbandes nur für 15 Staaten verlässliche Informationen eingepflegt werden konnten, mussten anderweitig noch Fallstudien beschafft und ausgewertet werden. Gerade kleinere europäische Staaten konnten hiermit jedoch auch nicht vollends zufriedenstellend abgedeckt werden. In solchen Fällen (beispielsweise Island, oder auch Griechenland, Norwegen oder Dänemark) wurde von Seiten des Autors auf die jeweiligen Länderverfassungen (teilweise in englischer Übersetzung) zurückgegriffen, um die Daten entsprechend nicht als "NA" kennzeichnen zu müssen. Auf diese Weise konnte eine Abdeckung für viele Staaten in der Untersuchung geschaffen werden - ein guter Anfang, doch noch von den vollen 100% entfernt. Hier bedürfte es für zukünftige Forschung noch einem Zuwachs an Länderstudien durch ausgewiesene Experten, wie sie im Sammelband von Rasch et al. durchgeführt wurden.
+
+Weiterhin bedürfte es, was das vom Autor selbst konzipierte Codierschema für die neuen Investiturvariablen angeht, ebenfalls einiger Ergänzungen. So könnten beispielsweise die Mehrheitsregelungen bei den Abstimmungen noch genauer erfasst werden. Ebenfalls wäre die Codierung einer Variable sinnvoll, welche Informationen über die Veränderung dieser Abstimmungsregeln enthält, abhängig davon, welche Investiturrunde betrachtet wird. Ebenso wäre eine Kopplung zwischen den Variablen Investitur-Fehlschlag und Anzahl der Investiturrunden wünschenswert, hier eventuell eine einheitliche Variable zu konstruieren, welche beiden theoretischen Anforderungen gerecht würde.
+
+Doch auch aus der Forschungs- und Analyseperspektive gäbe es Wege, das hier zum Abschluss etwas explorativ skizzierte Bild zu erweitern: so wäre beispielsweise eine regional konzentrierte Studie interessant, welche die neu codierten Investiturregeln nicht nur auf den *gesamten* Datensatz allein anwendet, sondern welche beispielsweise, angelehnt an die Studie von Ecker und Meyer (2015), zwischen (Mittel-)Ost- und Westeuropa unterscheidet.
+Eine solche Untersuchung müsste dann nicht losgelöst von der Weiterentwicklung des Datensatzes geschehen, sondern dies könnte auch in eine Analyse integriert werden, wie es auch diese Arbeit getan hat.
+
+Insgesamt kann jedoch abschließend folgendes konstatiert werden: vorliegende Arbeit schließt sich den Ausführungen von Golder an: eine Betrachtung der Dauer der Regierungsbildung rein auf Basis des Unsicherheits-Faktors mag theoretisch möglich sein und seine Berechtigung besitzen - jedoch ist es, wie auch der best fit hier zeigen konnte, nicht wirklich möglich, Variablen aus dem Komplexitäts-Bereich nur als Kontrollen zu sehen. Vielmehr konnte herausgestellt werden, dass die beiden Sphären sich nicht gegenseitig ausschließen, sie ergänzen sich eher komplementär - und können dadurch beide im Hinblick auf Erklärungen für die gesteigerte oder verringerte Dauer von Regierungsbildung als fruchtbare Theorie-Konzepte gesehen werden.
 
 # Anmerkungen zum Appendix
 
-Für vorliegende Arbeit lässt sich ein Online-Appendix abrufen. Dieser enthält, wie bereits angesprochen, das Codebook für etwaige im Zuge dieser Arbeit neu erstellte Variablen, sowie Notizen des Autors zu den Gründen für die Codierung. Ebenfalls lässt sich dort der Code für die Analyse zur Replikation finden. Erreicht werden kann dieser Appendix durch [diesen Link](https://github.com/FWisniewski44/CabInvest/tree/main).
+Für vorliegende Arbeit lässt sich ein Online-Appendix abrufen. Dieser enthält, wie bereits angesprochen, das Codebook für etwaige im Zuge dieser Arbeit neu erstellte Variablen, sowie Notizen des Autors zu den Gründen für die Codierung. Ebenfalls lässt sich dort der Code für die Analyse zur Replikation finden. Erreicht werden kann dieser Appendix durch [diesen Link](https://github.com/FWisniewski44/CabInvest/tree/main). Das Codebook findet sich dabei unter der Datei "codebook_investErdda". Notizen darüber, warum die Variablen auf eine bestimmte Weise codiert worden sind, finden sich in der Datei "notes_investErdda".
 
 
 # Literaturverzeichnis
@@ -319,8 +444,10 @@ Für vorliegende Arbeit lässt sich ein Online-Appendix abrufen. Dieser enthält
 
 + Ecker, Alejandro; Meyer, Thomas (2017): *Coalition Bargaining Duration in Multiparty Democracies*, British Journal of Political Science, Vol. 50, S. 261-280.
 
++ Laakso, Markku; Taagepera, Rein (1979): *Effective Number of Parties: A Measurement with Application to West Europe*, Comparative Political Studies, Vol. 12, S. 3-27.
 
-
++ Tsebelis, George (2002). *Veto Players: How Political !nstitutions Work*, New York, NY:
+Russell Sage Foundation and Princeton, NJ: Princeton University Press (Zitation nach Draft, abrufbar unter: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.466.977&rep=rep1&type=pdf).
 
 
 
